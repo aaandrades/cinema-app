@@ -1,0 +1,101 @@
+    @import "../../../colors.scss";
+    .container {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        font-family: "roboto";
+        @media only screen and (max-width: 650px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        &__background {
+            width: 100%;
+            color: $primary-color-letter;
+            background-color: $primary-color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            @media only screen and (max-width: 650px) {
+                padding: 70px 0px;
+            }
+            &__icon {
+                width: 250px;
+            }
+        }
+        &__card {
+            width: 100%;
+            transition: width 0.2s;
+            background-color: $secondary-color;
+            -webkit-box-shadow: -12px 6px 22px 0px rgba(0, 0, 0, 0.53);
+            box-shadow: -12px 6px 22px 0px rgba(0, 0, 0, 0.53);
+            @media only screen and (max-width: 650px) {
+                width: 80%;
+                margin-top: -30px;
+                margin-bottom: 60px;
+                border-radius: 20px;
+                -webkit-box-shadow: 2px -2px 22px 0px rgba(0, 0, 0, 0.53);
+                box-shadow: 2px -2px 22px 0px rgba(0, 0, 0, 0.53);
+            }
+            &__holder {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 50px;
+                color: black;
+                &__title {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 50px;
+                }
+                &__input {
+                    width: 100%;
+                    padding: 15px;
+                    margin-bottom: 15px;
+                    border-radius: 8px;
+                    outline: none !important;
+                    border: 1px solid $primary-color;
+                    font-size: 15px;
+                    &:focus {
+                        border-color: $primary-color;
+                        box-shadow: 0 0 10px $primary-color;
+                    }
+                }
+                &__button {
+                    border: none;
+                    width: 20%;
+                    height: 45px;
+                    min-width: 150px;
+                    margin-top: 15px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    color: $primary-color-letter;
+                    background-color: $primary-color;
+                    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.40);
+                    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.40);
+                    &:hover {
+                        background-color: $background-primary-color;
+                    }
+                }
+            }
+            @media (min-width: 650px) {
+                &:hover {
+                    width: 140%;
+                    transition: width 0.5s;
+                }
+            }
+        }
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    h1 {
+        margin: 20px 0px -10px 0px;
+    }
