@@ -1,8 +1,16 @@
 //
 // Color Schema
-//
-$primary-color: #e63946;
-$background-primary-color: #df1627;
-$secondary-color: #f1faee;
+$primary-color: #14213d;
+$background-primary-color: #023047;
+$secondary-color: #f9c74f;
+$tertiary-color: #023e8a;
+$error: #f8919a;
+
 // letter colors
-$primary-color-letter: #ffffff;
+$white-100: #ffffff;
+$black-100: black;
+
+$yellow-gradient: linear-gradient(180deg, #fdc130, #f69b31);
+
+$blue-300: #3b3fb1;
+$blue-250: #383ca5;

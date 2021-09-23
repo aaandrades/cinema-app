@@ -1,0 +1,11 @@
+<div class="modal-container" *ngIf="showModal">
+    <div class="modal-container__modal">
+        <span class="modal-container__modal__title">{{ alertInfo.title }}</span>
+        <div class="modal-container__modal__description">
+            <span>{{ alertInfo.message }}</span>
+        </div>
+        <button class="modal-container__button" (click)="disableModal()">
+      Understood
+    </button>
+    </div>
+</div>

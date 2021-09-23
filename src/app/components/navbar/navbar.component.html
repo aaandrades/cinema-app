@@ -1,0 +1,45 @@
+<nav class="navbar">
+  <ul class="navbar-nav">
+    <li class="logo">
+      <a class="nav-link">
+        <img alt="drawer" src="../../../assets/menu.svg" width="20" />
+      </a>
+    </li>
+
+    <li class="nav-item" [ngClass]="current === 'dashboard' ? 'selected' : ''">
+      <a class="nav-link" routerLink="/dashboard">
+        <img
+          alt="dashboard"
+          src="../../../assets/clapperboard.svg"
+          width="20"
+        />
+        <span class="link-text">Dashboard</span>
+      </a>
+    </li>
+
+    <li class="nav-item" [ngClass]="current === 'search' ? 'selected' : ''">
+      <a class="nav-link" routerLink="/search">
+        <img alt="dashboard" src="../../../assets/search.svg" width="20" />
+        <span class="link-text">Search</span>
+      </a>
+    </li>
+
+    <li class="nav-item" [ngClass]="current === 'premiers' ? 'selected' : ''">
+      <a routerLink="/premiers" class="nav-link">
+        <img
+          alt="dashboard"
+          class="fa-primary"
+          src="../../../assets/promotion.svg"
+          width="20"
+        />
+        <span class="link-text">Premiers</span>
+      </a>
+    </li>
+    <li class="nav-item" [ngClass]="current === 'user' ? 'selected' : ''">
+      <a href="#" class="nav-link">
+        <img alt="dashboard" src="../../../assets/user.svg" width="20" />
+        <span class="link-text">User</span>
+      </a>
+    </li>
+  </ul>
+</nav>

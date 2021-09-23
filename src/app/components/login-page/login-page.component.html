@@ -1,22 +1,69 @@
 <div class="container">
-    <div class="container__background">
-        <img src="../../../assets/shop.svg" alt="shop-icon" class="animate__animated animate__bounce container__background__icon" />
-        <h1>Online shopping</h1>
+  <div class="container__card">
+    <div class="container__card__left-side">
+      <img
+        src="../../../assets/shop.svg"
+        alt="shop-icon"
+        class="
+          animate__animated animate__bounce
+          container__card__left-side__icon
+        "
+      />
+      <div class="container__card__left-side__header">
+        <h1>Online Cinema</h1>
         <h3>
-            A simple app where you can handle the state <br /> through Redux (Ngrx).
+          A simple app where you can handle the state through Redux (Ngrx).
         </h3>
+      </div>
     </div>
-    <div class="container__card">
-        <form class="container__card__holder" [formGroup]="loginForm" novalidate>
-            <h1 class="container__card__holder__title">Enter your credentials</h1>
-            <input class="container__card__holder__input" type="text" formControlName="user" placeholder="Username" autocomplete="off" />
-            <span *ngIf="!validUser">Error in user</span>
-            <input class="container__card__holder__input" type="password" formControlName="password" placeholder="Password" />
-            <span *ngIf="!validPassword">Error in password</span>
-            <button (click)="onSubmit()" type="submit" class="container__card__holder__button">Login</button>
-            <br />
-            <p>New user? <a routerLink="/register">Sign up here</a></p>
-        </form>
-        <app-helper-dialog></app-helper-dialog>
-    </div>
+    <form class="container__card__rightside" [formGroup]="loginForm" novalidate>
+      <h1 class="container__card__rightside__title">Welcome!</h1>
+
+      <span *ngIf="!validUser" class="animate__animated animate__jello"
+        >Insert a valid username</span
+      >
+      <input
+        [ngClass]="{
+          container__card__rightside__input: validUser,
+          'container__card__rightside__input--error animate__animated animate__jello':
+            !validUser
+        }"
+        type="email"
+        value="{}"
+        formControlName="user"
+        placeholder="Username"
+        autocomplete="off"
+      />
+
+      <span *ngIf="!validPassword" class="animate__animated animate__jello"
+        >Insert a valid password</span
+      >
+      <input
+        [ngClass]="{
+          container__card__rightside__input: validPassword,
+          'container__card__rightside__input--error animate__animated animate__jello':
+            !validPassword
+        }"
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+
+      <button
+        (click)="onSubmit()"
+        type="submit"
+        class="container__card__rightside__button"
+      >
+        Login
+      </button>
+      <br />
+      <p class="helper-text">
+        New user? <a routerLink="/register">Sign up here</a>
+      </p>
+    </form>
+  </div>
 </div>
+
+<app-helper-dialog
+  (defaultCredentials)="updateFields($event)"
+></app-helper-dialog>

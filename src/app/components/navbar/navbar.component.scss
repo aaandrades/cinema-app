@@ -1,0 +1,105 @@
+@import "../../../colors.scss";
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  main {
+    margin: 0;
+  }
+  .logo {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .navbar {
+    width: 5rem;
+    height: 100vh;
+    border-radius: 0px 30px 30px 0px;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+    -webkit-box-shadow: 4px 18px 8px 0px rgb(0 0 0 / 61%);
+    box-shadow: 4px 18px 8px 0px rgb(0 0 0 / 61%);
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+    color: $secondary-color;
+  }
+
+  .selected {
+    margin-left: -5rem;
+    padding-left: 5rem;
+    background: $blue-250;
+  }
+}
+
+.navbar {
+  z-index: 1;
+  position: fixed;
+  background: $blue-300;
+  transition: width 200ms ease;
+}
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  color: $white-100;
+  flex-direction: row;
+  text-decoration: none;
+  transition: padding 200ms ease-in;
+}
+
+.nav-link:hover {
+  color: $white-100;
+  padding-left: 10px;
+  transition: padding 200ms ease-in;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
+.logo {
+  margin-bottom: 1rem;
+  color: $secondary-color !important;
+}
+
+.logo img {
+  transform: rotate(0deg);
+  transition: transform 200ms ease-in;
+}
+
+.navbar:hover .logo img {
+  transform: rotate(-180deg);
+}

@@ -1,0 +1,113 @@
+@import "../../../../colors.scss";
+
+.container {
+  // color: $secondary-color;
+  color: $blue-300;
+  &__header {
+    color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @media only screen and (min-width: 600px) {
+      display: block;
+      padding: 2rem 10rem 1rem;
+      width: 80%;
+    }
+    &__title {
+      display: flex;
+      align-items: center;
+      @media only screen and (max-width: 600px) {
+        font-size: 0.8rem;
+      }
+    }
+    &__img {
+      max-height: 80px;
+      @media only screen and (max-width: 600px) {
+        width: 80px;
+      }
+    }
+    &__input {
+      width: 80%;
+      outline: none;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      font-family: "roboto";
+      border: 1px solid silver;
+      @media only screen and (min-width: 600px) {
+        width: 224px;
+      }
+    }
+  }
+  &__movies {
+    padding: 0px 50px 50px 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media only screen and (min-width: 600px) {
+      margin-left: 5rem;
+    }
+    @media only screen and (max-width: 600px) {
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+    @media only screen and (max-width: 320px) {
+      display: grid;
+      grid-template-columns: 100%;
+    }
+    &__item {
+      margin: 20px;
+      cursor: pointer;
+      max-width: 200px;
+      &:hover {
+        transform: scale(1.05) !important;
+      }
+      &__description {
+        font-size: 0.8rem;
+        margin-bottom: 2px;
+      }
+
+      &__img {
+        width: 200px;
+        @media only screen and (max-width: 600px) {
+          width: auto;
+        }
+        height: auto;
+        border-radius: 7px;
+        margin-bottom: 10px;
+        box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
+        -webkit-box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
+      }
+      &__body {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        &__title {
+          font-weight: bold;
+          font-size: 1rem;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    &__no-results{
+      margin-top: 20px;
+    }
+  }
+}
+
+.input-container {
+  width: 20px;
+  padding-left: 40px;
+  transition: width 200ms ease-out;
+  background-image: url("../../../../assets/search-input.svg");
+  background-position: 1rem;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  width: 300px;
+  transition: width 200ms ease-in;
+
+  @media only screen and (max-width: 600px) {
+    width: 90%
+  }
+}

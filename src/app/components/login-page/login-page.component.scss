@@ -1,101 +1,126 @@
-    @import "../../../colors.scss";
-    .container {
-        display: flex;
-        height: 100vh;
-        width: 100vw;
-        font-family: "roboto";
+@import "../../../colors.scss";
+.container {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: $primary-color;
+  justify-content: center;
+  background-image: url("../../../assets/pattern-lightblue.png");
+  background-size: 500px;
+
+  @media only screen and (max-width: 650px) {
+    align-items: flex-start;
+  }
+
+  &__card {
+    width: 50%;
+    display: flex;
+    padding: 60px;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    background-color: $white-100;
+    justify-content: space-between;
+    -webkit-box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.19);
+    box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.19);
+
+    @media only screen and (max-width: 650px) {
+      margin-top: 2rem;
+      padding: 20px 50;
+    }
+
+    &__left-side {
+      width: 25rem;
+      text-align: center;
+      &__header {
         @media only screen and (max-width: 650px) {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+          display: none;
         }
-        &__background {
-            width: 100%;
-            color: $primary-color-letter;
-            background-color: $primary-color;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            @media only screen and (max-width: 650px) {
-                padding: 70px 0px;
-            }
-            &__icon {
-                width: 250px;
-            }
+      }
+
+      &__icon {
+        width: 200px;
+        @media only screen and (max-width: 650px) {
+          width: 100px;
         }
-        &__card {
-            width: 100%;
-            transition: width 0.2s;
-            background-color: $secondary-color;
-            -webkit-box-shadow: -12px 6px 22px 0px rgba(0, 0, 0, 0.53);
-            box-shadow: -12px 6px 22px 0px rgba(0, 0, 0, 0.53);
-            @media only screen and (max-width: 650px) {
-                width: 80%;
-                margin-top: -30px;
-                margin-bottom: 60px;
-                border-radius: 20px;
-                -webkit-box-shadow: 2px -2px 22px 0px rgba(0, 0, 0, 0.53);
-                box-shadow: 2px -2px 22px 0px rgba(0, 0, 0, 0.53);
-            }
-            &__holder {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                margin: 50px;
-                color: black;
-                &__title {
-                    font-size: 20px;
-                    font-weight: bold;
-                    margin-bottom: 50px;
-                }
-                &__input {
-                    width: 100%;
-                    padding: 15px;
-                    margin-bottom: 15px;
-                    border-radius: 8px;
-                    outline: none !important;
-                    border: 1px solid $primary-color;
-                    font-size: 15px;
-                    &:focus {
-                        border-color: $primary-color;
-                        box-shadow: 0 0 10px $primary-color;
-                    }
-                }
-                &__button {
-                    border: none;
-                    width: 20%;
-                    height: 45px;
-                    min-width: 150px;
-                    margin-top: 15px;
-                    cursor: pointer;
-                    border-radius: 10px;
-                    color: $primary-color-letter;
-                    background-color: $primary-color;
-                    -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.40);
-                    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.40);
-                    &:hover {
-                        background-color: $background-primary-color;
-                    }
-                }
-            }
-            @media (min-width: 650px) {
-                &:hover {
-                    width: 140%;
-                    transition: width 0.5s;
-                }
-            }
+      }
+    }
+
+    &__rightside {
+      width: 23rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      &__title {
+        font-size: 2.2rem;
+        color: $secondary-color;
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+      &__input {
+        width: 21rem;
+        padding: 15px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        outline: none !important;
+        border: 1px solid silver;
+        @media only screen and (max-width: 650px) {
+          width: 85%;
         }
+      }
+      &__input--error {
+        width: 21rem;
+        background: $error;
+        color: $white-100;
+        padding: 15px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        outline: none !important;
+        border: 1px solid $primary-color;
+        font-size: 15px;
+        @media only screen and (max-width: 650px) {
+          width: 90%;
+        }
+        &:focus {
+          border-color: $primary-color;
+        }
+        &::placeholder {
+          color: $white-100;
+        }
+      }
+      &__button {
+        border: none;
+        width: 100%;
+        height: 45px;
+        cursor: pointer;
+        margin-top: 15px;
+        color: $white-100;
+        border-radius: 10px;
+        background-color: $primary-color;
+        &:hover {
+          background-color: $background-primary-color;
+        }
+      }
     }
-    
-    a {
-        text-decoration: none;
-    }
-    
-    h1 {
-        margin: 20px 0px -10px 0px;
-    }
+  }
+}
+
+span {
+  color: $error;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  margin: 20px 0px -10px 0px;
+}
+
+.helper-text {
+  font-size: 1.2rem;
+}

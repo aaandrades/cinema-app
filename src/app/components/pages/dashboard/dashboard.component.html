@@ -1,0 +1,54 @@
+<div
+  class="container"
+  infiniteScroll
+  [infiniteScrollDistance]="1"
+  [infiniteScrollThrottle]="150"
+  (scrolled)="onScroll()"
+>
+  <app-navbar [current]="'dashboard'"></app-navbar>
+  <div class="container__header">
+    <div class="container__header__title">
+      <h1>TOP MOVIES</h1>
+    </div>
+    <div class="search-container">
+      <input
+        class="container__header__input input-container"
+        placeholder="Ej: Fight club"
+        (keyup.enter)="filterMovies(search.value)"
+        #search
+      />
+    </div>
+  </div>
+  <div class="container__movies">
+    <ng-container *ngIf="currentMovies.length > 0; else noResults">
+      <ng-container *ngFor="let item of currentMovies">
+        <div
+          class="container__movies__item animate__animated animate__flipInY"
+          (click)="goToDetail(item.id)"
+        >
+          <img
+            class="container__movies__item__img"
+            alt="{{ item.title }}"
+            src="{{ item.image }}"
+          />
+          <div class="container__movies__item__body">
+            <label class="container__movies__item__body__title">
+              {{ item.title }}
+            </label>
+            <label class="container__movies__item__description">
+              Year: {{ item.year }}
+            </label>
+            <label class="container__movies__item__description">
+              IMDB Score: {{ item.imDbRating }}
+            </label>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <ng-template #noResults>
+    <div class="container__movies__no-results">
+      No results
+    </div>
+  </ng-template>
+</div>
