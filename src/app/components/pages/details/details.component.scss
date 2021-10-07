@@ -1,3 +1,171 @@
-.imagee{
-    max-width: 600px;
+@import "../../../../mixins.scss";
+@import "../../../../colors.scss";
+
+@import "~swiper/css";
+@import "~swiper/css/pagination";
+
+.movie-container {
+  @include horizontal-container(true);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  color: $blue-300;
+  position: absolute;
+  background: $blue-300;
+  @media only screen and (max-width: 850px) {
+    padding-left: 10%;
+    justify-content: flex-start;
+  }
+  @media only screen and (max-width: 650px) {
+    position: relative;
+    padding-left: 0px;
+    justify-content: center;
+  }
+  .back-row {
+    top: 15px;
+    left: 15px;
+    position: fixed;
+    cursor: pointer;
+  }
+  &__body {
+    display: flex;
+    max-width: 70%;
+    @media only screen and (max-width: 650px) {
+      max-width: 90%;
+      flex-wrap: wrap;
+    }
+    &__image {
+      max-width: 50%;
+      border-radius: 8px;
+      -webkit-box-shadow: 5px 4px 8px -2px rgba(0, 0, 0, 0.32);
+      box-shadow: 5px 4px 8px -2px rgba(0, 0, 0, 0.32);
+      @media only screen and (min-width: 1400px) {
+        max-width: 500px;
+      }
+      @media only screen and (max-width: 650px) {
+        margin: 20px 0px;
+        max-width: 100%;
+      }
+    }
+    &__title {
+      color: $secondary-color;
+      font-weight: bold;
+    }
+    &__summary {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    &__awards {
+      @include vertical-container(true);
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+      border: 1px solid $blue-300;
+      .award-text {
+        margin-top: -20px;
+        padding: 10px 20px;
+      }
+    }
+    &__about {
+      @include vertical-container(true);
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      align-items: flex-start;
+      border: 1px solid $blue-300;
+      .about-texts {
+        @include vertical-container(true);
+        align-items: flex-start;
+        padding: 10px 20px;
+        &__labels {
+          font-weight: bold;
+          margin: 3px 0xp;
+        }
+      }
+    }
+    &__description {
+      @include vertical-container(false);
+      max-width: 50%;
+      padding: 20px 40px;
+      margin-left: 60px;
+      border-radius: 8px;
+      background-color: $white-100;
+      -webkit-box-shadow: 5px 4px 8px -2px rgba(0, 0, 0, 0.32);
+      box-shadow: 5px 4px 8px -2px rgba(0, 0, 0, 0.32);
+      @media only screen and (min-width: 1400px) {
+        max-width: 500px;
+      }
+      @media only screen and (max-width: 650px) {
+        max-width: 100%;
+        margin: 20px 0px;
+      }
+      .description-container {
+        @include horizontal-container(false);
+        width: 400px;
+        flex-wrap: wrap;
+        @media only screen and (max-width: 850px) {
+          width: 250px;
+        }
+        @media only screen and (max-width: 650px) {
+          width: 340px;
+        }
+        @media only screen and (max-width: 414px) {
+          width: 18rem;
+        }
+        @media only screen and (max-width: 375px) {
+          width: 16rem;
+        }
+        @media only screen and (max-width: 360px) {
+          width: 244px;
+        }
+        @media only screen and (max-width: 320px) {
+          width: 13rem;
+        }
+        &__image {
+          height: 150px;
+          max-width: 100px;
+          border-radius: 8px;
+          @media only screen and (max-width: 850px) {
+            height: 125px;
+          }
+          @media only screen and (max-width: 320px) {
+            height: 95px;
+          }
+        }
+        .actor-container {
+          @include vertical-container(false);
+          font-size: 0.8rem;
+          text-align: center;
+        }
+        .text-container {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+.swiper-pagination {
+  margin-top: 10px;
+  position: inherit;
+}
+
+.title-helper {
+  margin-top: -15px;
+  margin-left: 5px;
+  padding: 0px 5px;
+  background-color: $white-100;
+}
+
+.button-container {
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: $white-100;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: $blue-300;
 }

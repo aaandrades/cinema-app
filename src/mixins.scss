@@ -1,0 +1,21 @@
+@import "./colors.scss";
+
+@mixin horizontal-container($center) {
+  display: flex;
+  align-items: center;
+  @if $center {
+    justify-content: center;
+  } @else {
+    justify-content: space-between;
+  }
+}
+@mixin vertical-container($center) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @if $center {
+    justify-content: flex-end;
+  } @else {
+    justify-content: center;
+  }
+}

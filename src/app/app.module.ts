@@ -27,6 +27,9 @@ import { CustomModalComponent } from './components/custom-modal/custom-modal.com
 import { ModalEffects } from './store/effects/modal.effects';
 import { DetailsComponent } from './components/pages/details/details.component';
 
+import { SwiperModule } from 'swiper/angular';
+
+
 export const userFeatureName = 'userState';
 export const moviesFeatureName = 'moviesState';
 @NgModule({
@@ -43,11 +46,12 @@ export const moviesFeatureName = 'moviesState';
     DetailsComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
+    SwiperModule,
+    BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
     InfiniteScrollModule,
     StoreModule.forFeature(userFeatureName, userReducer),
     StoreModule.forFeature(moviesFeatureName, moviesReducer),
