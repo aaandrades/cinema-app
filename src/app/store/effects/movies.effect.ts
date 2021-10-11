@@ -88,6 +88,37 @@ export class MoviesEffects {
     )
   );
 
+  fetchMovieByExpressionEffect$: Observable<Action> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(movies.fetchMovieById),
+      concatMap((userState) =>
+        of(userState).pipe(
+          withLatestFrom(this.store.pipe(select(userSelector)))
+        )
+      ),
+      switchMap(([action, userState]) =>
+        this.movieService.getMovieById(userState.token_api, action.id).pipe(
+          map((response: any) => {
+            if (response.errorMessage === 'Invalid API Key') {
+              throw new Error('FAILED FETCH API');
+            }
+            return movies.fetchMovieByExpressionSuccessAction({
+              currentMovie: response,
+            });
+          }),
+          catchError((err) => {
+            console.error('ERROR IN : ', err);
+            return of(
+              movies.fetchMoviesErrorAction({
+                message: AlertsMessagesType.ERROR_FETCHING_MOVIES,
+              })
+            );
+          })
+        )
+      )
+    )
+  );
+
   redirectToLoginEffect$: Observable<Action> = createEffect(
     () =>
       this.actions$.pipe(

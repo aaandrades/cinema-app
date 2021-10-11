@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResultsInterface } from '../store/model/movies.state';
+import { ResultsInterface, MassiveResultsInterface } from '../store/model/movies.state';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -20,6 +20,12 @@ export class MoviesService {
   getMovieById(tokenApi: string, id: string): Observable<ResultsInterface> {
     return this.http.get<any>(
       `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}` 
+    );
+  }
+
+  getMovieByExpression(tokenApi: string, expression: string): Observable<MassiveResultsInterface> {
+    return this.http.get<any>(
+      `${this.BASE_URL}/Search/${tokenApi}/${expression}` 
     );
   }
 }

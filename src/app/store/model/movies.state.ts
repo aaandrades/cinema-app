@@ -25,3 +25,9 @@ export interface ResultsInterface {
   erroMesage: string;
   items: MovieInterface[];
 }
+
+export interface MassiveResultsInterface {
+  searchType: string;
+  expression: string;
+  results: [];
+}
