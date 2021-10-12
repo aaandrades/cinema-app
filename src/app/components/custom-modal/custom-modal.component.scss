@@ -42,13 +42,21 @@
     }
   }
   &__button {
-    background-color: transparent;
+    background-color: $secondary-color;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     font-family: roboto;
     font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: $tertiary-color;
     letter-spacing: 1.1px;
-    color: $secondary-color;
+    transform: scale(1);
+    transition: transform 100ms ease-in;
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 100ms ease-in;
+    }
   }
 }

@@ -46,12 +46,15 @@ export const fetchMovieByExpression = createAction(
 
 export const fetchMovieByExpressionSuccessAction = createAction(
   ngrxType('[Movies/UI] Success fetching movie by expression action'),
-  props<{ currentMovie: any }>()
+  props<{ searchResults: any }>()
 );
 
 export const fetchMovieByExpressionErrorAction = createAction(
   ngrxType('[Movies/UI] Error fetching movie by expression action'),
   props<{ message: AlertsMessagesTypeInterface }>()
+);
+export const clearCurrentSearchAction = createAction(
+  ngrxType('[Movies/UI] Clear current search action'),
 );
 
 EnableLoadingObserverActionsTypes.push(fetchMovieById);

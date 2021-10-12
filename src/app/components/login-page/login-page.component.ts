@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { Validators, FormControl, FormGroup } from '@angular/forms';
-import { LoginService } from 'src/app/services/login.service';
 import { defaulCredentialsInterface } from '../helper-dialog/helper-dialog.component';
 import { credentials as credentialsInterface } from '../../models/interface';
 import { UserFacade } from '../../store/facade/user.facade';
 import { ModalService } from '../modal/ModalProvider/modal.service';
+import { Constants } from '../../helpers/Constants';
 
 @Component({
   selector: 'app-login-page',
@@ -17,7 +17,10 @@ export class LoginPageComponent {
   validUser: boolean = true;
   validPassword: boolean = true;
 
-  constructor(private loginService: LoginService, private userFacade: UserFacade, private modalService: ModalService) {
+  constructor(
+    private userFacade: UserFacade,
+    private modalService: ModalService
+  ) {
     this.loginForm = new FormGroup({
       user: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),
@@ -43,6 +46,15 @@ export class LoginPageComponent {
     this.loginForm.patchValue({
       user: value.user,
       password: value.password,
+    });
+  }
+
+  fastSubmit() {
+    this.validUser = true;
+    this.validPassword = true;
+    this.userFacade.initLogin({
+      email: Constants.defaultUser,
+      password: Constants.defaultPassword,
     });
   }
 

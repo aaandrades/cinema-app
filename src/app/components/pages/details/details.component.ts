@@ -23,6 +23,7 @@ export class DetailsComponent implements OnInit {
   constructor(
     private moviesFacade: MoviesFacade,
     private router: Router,
+    private location: Location,
     private loader: ModalService
   ) {}
 
@@ -34,10 +35,10 @@ export class DetailsComponent implements OnInit {
     this.currentMovie = movies;
     if (movies) {
       this.currentMovie = movies;
-      const loadingImg = timer(1000);
+      const loadingImg = timer(2000);
       loadingImg.subscribe(() => {
         this.loader.hideLoader();
-      })
+      });
     } else {
       this.loader.hideLoader();
       this.router.navigate(['/dashboard']);
@@ -50,5 +51,9 @@ export class DetailsComponent implements OnInit {
 
   formatResume(plot: string) {
     return plot?.substring(0, 220) + '...';
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

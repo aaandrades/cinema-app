@@ -7,6 +7,7 @@ export interface MoviesState {
   results: MovieInterface[];
   loading: Boolean;
   currentMovie?: any;
+  searchResults?: any;
 }
 
 export interface MovieInterface {
@@ -27,7 +28,15 @@ export interface ResultsInterface {
 }
 
 export interface MassiveResultsInterface {
-  searchType: string;
+  errorMessage: string;
   expression: string;
-  results: [];
+  results: Array<any>;
+  searchType: string;
 }
+
+export const initialSearch = {
+  errorMessage: '',
+  expression: '',
+  results: [],
+  searchType: '',
+};

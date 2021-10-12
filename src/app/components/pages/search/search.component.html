@@ -1,6 +1,50 @@
+<app-navbar [current]="'search'"></app-navbar>
 <div class="container">
-    <app-navbar [current]="'search'"></app-navbar>
-    <button (click)="searchMovies()">Buscar
-
-    </button>
+  <span></span>
+  <div
+    class="search-container"
+    [ngClass]="showingResults ? 'showing-results' : ''"
+  >
+    <div
+      class="search-container__box"
+      [ngClass]="
+        showingResults
+          ? ''
+          : 'initial-search animate__animated animate__fadeInDown'
+      "
+    >
+      <h2>Movie search</h2>
+      <p>Search by expression to find available movies in the IMDB service.</p>
+      <div class="search-container__input">
+        <input
+          class="input-search"
+          placeholder="Ej: The lord"
+          [(ngModel)]="currentSearch"
+          (keyup.enter)="searchMovies()"
+        />
+        <button (click)="searchMovies()" class="button-search">Search</button>
+        <button
+          (click)="clearFilters()"
+          class="button-search clear"
+          *ngIf="currentSearch !== ''"
+        >
+          Clear
+        </button>
+      </div>
+    </div>
+    <div class="results-container" *ngIf="showingResults">
+      <div
+        *ngFor="let item of moviesResults$ | async"
+        class="results-container__card"
+        (click)="goToDetails(item.id)"
+      >
+        <img
+          src="{{ item.image }}"
+          alt="{{ item.title }}"
+          class="results-container__card__image"
+        />
+        <span class="results-container__card__label">{{ item.title }}</span>
+      </div>
+    </div>
+  </div>
 </div>

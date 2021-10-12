@@ -6,7 +6,13 @@ export const movieSelector = createSelector(
   movieState,
   (state: MoviesState) => state.results
 );
+
 export const currentMovieSelector = createSelector(
   movieState,
   (state: MoviesState) => state.currentMovie
+);
+
+export const searchMovieSelector = createSelector(
+  movieState,
+  (state: MoviesState) => state.searchResults?.results
 );

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ResultsInterface, MassiveResultsInterface } from '../store/model/movies.state';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { searchMock } from '../mocks/movies.mock';
 
 @Injectable({
   providedIn: 'root',
@@ -20,12 +21,12 @@ export class MoviesService {
   getMovieById(tokenApi: string, id: string): Observable<ResultsInterface> {
     return this.http.get<any>(
       `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}` 
+      // `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${'k_3o18c1sm'}/${id}` 
     );
   }
 
   getMovieByExpression(tokenApi: string, expression: string): Observable<MassiveResultsInterface> {
-    return this.http.get<any>(
-      `${this.BASE_URL}/Search/${tokenApi}/${expression}` 
-    );
+    return of(searchMock)
+    // return this.http.get<any>(`${this.BASE_URL}Search/${'k_3o18c1sm'}/${expression}`)
   }
 }

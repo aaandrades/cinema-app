@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { MoviesFacade } from 'src/app/store/facade/movies.facade';
 
 @Component({
@@ -7,12 +8,27 @@ import { MoviesFacade } from 'src/app/store/facade/movies.facade';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  
-  constructor(private moviesFacade: MoviesFacade) { }
+  currentSearch = '';
+  showingResults = false;
 
-  ngOnInit(): void { }
-  
+  moviesResults$: Observable<Array<any>> = this.moviesFacade.searchMovies$;
+
+  constructor(private moviesFacade: MoviesFacade) {}
+
+  ngOnInit(): void {}
+
   searchMovies() {
-    this.moviesFacade.getMovieByExpression('la ciudad');
+    this.showingResults = true;
+    this.moviesFacade.getMovieByExpression(this.currentSearch);
+  }
+
+  clearFilters() {
+    this.showingResults = false;
+    this.currentSearch = '';
+    this.moviesFacade.clearSearchMovie();
+  }
+
+  goToDetails(id: string) {
+    this.moviesFacade.getMovieById(id);
   }
 }

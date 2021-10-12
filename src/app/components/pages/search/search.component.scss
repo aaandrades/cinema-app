@@ -1,6 +1,136 @@
 @import "../../../../colors.scss";
+@import "../../../../mixins.scss";
+
 .container {
-    background-color: $secondary-color;
-    height: 100vh;
-    font-family: "roboto";
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: grid;
+  overflow-y: auto;
+  font-family: "roboto";
+  background-color: $gray-300;
+  grid-template-columns: 5% 95%;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 0% 100%;
+  }
+}
+
+.showing-results {
+  margin-top: 50px;
+}
+
+.initial-search {
+  // margin-top: -50px;
+  animation-duration: 500ms;
+}
+
+.search-container {
+  @include vertical-container(false);
+  height: 100%;
+  width: 100%;
+  &__box {
+    @include vertical-container(false);
+    width: 60%;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: $secondary-color;
+    background-color: $tertiary-color;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
+  }
+  &__input {
+    @include horizontal-container(true);
+    width: 100%;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+    .input-search {
+      width: 50%;
+      outline: none;
+      padding: 15px 15px 15px 40px;
+      border-radius: 8px;
+      font-family: "roboto";
+      font-size: 1rem;
+      margin-right: 10px;
+      border: 1px solid silver;
+      background-size: 1rem;
+      background-position: 1rem;
+      background-repeat: no-repeat;
+      background-image: url("../../../../assets/search-input.svg");
+      @media only screen and (max-width: 600px) {
+        width: 90%;
+      }
+    }
+    .button-search {
+      border: none;
+      cursor: pointer;
+      height: 47px;
+      font-size: 1rem;
+      border-radius: 8px;
+      padding: 10px 20px;
+      color: $tertiary-color;
+      background-color: $secondary-color;
+      &:hover {
+        -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+        box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+      }
+      @media only screen and (max-width: 600px) {
+        height: auto;
+        margin-top: 10px;
+      }
+    }
+    .clear {
+      margin-left: 10px;
+    }
+  }
+}
+
+.results-container {
+  width: 80%;
+  display: grid;
+  background-color: $white-100;
+  margin-top: 40px;
+  margin-bottom: 70px;
+  padding: 30px;
+  border-radius: 30px;
+  grid-template-columns: 25% 25% 25% 25%;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 50% 50%;
+  }
+  @media only screen and (max-width: 320px) {
+    grid-template-columns: 100%;
+  }
+  &__card {
+    @include vertical-container(false);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 200ms ease;
+    &:hover {
+      transform: scale(1.05);
+      transition: transform 200ms ease;
+    }
+    &__image {
+      max-width: 80%;
+      border-radius: 10px;
+      @media only screen and (max-width: 600px) {
+        width: 150px;
+        max-height: 200px;
+      }
+    }
+    &__label {
+      margin-top: 10px;
+      color: $tertiary-color;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
 }

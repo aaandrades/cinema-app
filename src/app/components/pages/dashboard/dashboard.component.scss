@@ -1,22 +1,38 @@
 @import "../../../../colors.scss";
 
+.navbar-space {
+  display: none;
+  @media only screen and (min-width: 600px) {
+    display: block;
+  }
+}
 .container {
-  // color: $secondary-color;
-  color: $blue-300;
+  color: $tertiary-color;
+  @media only screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 5% 95%;
+  }
+
   &__header {
-    color: $secondary-color;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 2rem 0rem;
     @media only screen and (min-width: 600px) {
-      display: block;
-      padding: 2rem 10rem 1rem;
-      width: 80%;
-    }
-    &__title {
       display: flex;
       align-items: center;
+    }
+    &__box {
+      width: 70%;
+      border-radius: 10px;
+      padding: 10px 30px 40px 30px;
+      background-color: $secondary-color;
+      box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+      -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+    }
+    &__title {
+      text-align: center;
       @media only screen and (max-width: 600px) {
         font-size: 0.8rem;
       }
@@ -35,19 +51,13 @@
       border-radius: 8px;
       font-family: "roboto";
       border: 1px solid silver;
-      @media only screen and (min-width: 600px) {
-        width: 224px;
-      }
     }
   }
   &__movies {
-    padding: 0px 50px 50px 50px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    @media only screen and (min-width: 600px) {
-      margin-left: 5rem;
-    }
+    align-items: center;
+    justify-content: center;
     @media only screen and (max-width: 600px) {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -57,6 +67,9 @@
       grid-template-columns: 100%;
     }
     &__item {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       margin: 20px;
       cursor: pointer;
       max-width: 200px;
@@ -70,18 +83,17 @@
 
       &__img {
         width: 200px;
-        @media only screen and (max-width: 600px) {
-          width: auto;
-        }
-        height: auto;
         border-radius: 7px;
         margin-bottom: 10px;
         box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
         -webkit-box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
+        @media only screen and (max-width: 600px) {
+          width: -webkit-fill-available;
+        }
       }
       &__body {
         display: flex;
-        align-items: flex-start;
+        text-align: center;
         flex-direction: column;
         &__title {
           font-weight: bold;
@@ -90,7 +102,7 @@
         }
       }
     }
-    &__no-results{
+    &__no-results {
       margin-top: 20px;
     }
   }
@@ -104,10 +116,37 @@
   background-position: 1rem;
   background-repeat: no-repeat;
   background-size: 1rem;
-  width: 300px;
+  width: 50%;
   transition: width 200ms ease-in;
-
+  margin-right: 10px;
   @media only screen and (max-width: 600px) {
-    width: 90%
+    width: 90%;
   }
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button-container {
+  border: none;
+  cursor: pointer;
+  color: $white-100;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: $tertiary-color;
+  &:hover {
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+  }
+  @media only screen and (max-width: 600px) {
+    margin-top: 10px;
+  }
+}
+
+.search-button {
+  margin-right: 10px;
 }

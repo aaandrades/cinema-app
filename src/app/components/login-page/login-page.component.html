@@ -48,7 +48,13 @@
         formControlName="password"
         placeholder="Password"
       />
-      <span>Use existenting credentials</span>
+      <button
+        (click)="fastSubmit()"
+        type="submit"
+        class="container__card__rightside__button"
+      >
+        Fast login (Just 1 click)
+      </button>
       <p>Or</p>
       <button
         (click)="onSubmit()"
@@ -57,11 +63,10 @@
       >
         Login
       </button>
-      <br />
       <p>Or</p>
-      <p class="helper-text">
-        New user? <a routerLink="/register">Sign up here</a>
-      </p>
+      <span class="helper-text">
+        New user? <a routerLink="/register"><b>Sign up here</b></a>
+      </span>
     </form>
   </div>
 </div>

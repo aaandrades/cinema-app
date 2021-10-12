@@ -3002,3 +3002,80 @@ export const moviesMock = [
     imDbRatingCount: '36244',
   },
 ];
+
+export const searchMock = {
+  errorMessage: '',
+  expression: 'CIUDAD',
+  results: [
+    {
+      id: 'tt6992250',
+      resultType: 'Title',
+      image: 'https://imdb-api.com/images/original/nopicture.jpg',
+      title: 'Ciudad',
+      description: '(in development) (TV Series)',
+    },
+    {
+      id: 'tt11950990',
+      resultType: 'Title',
+      image: 'https://imdb-api.com/images/original/nopicture.jpg',
+      title: 'Ciudad',
+      description: '(2018) (Short)',
+    },
+    {
+      id: 'tt2458278',
+      resultType: 'Title',
+      image: 'https://imdb-api.com/images/original/nopicture.jpg',
+      title: 'Ciudad',
+      description: '(2010) (Short)',
+    },
+    {
+      id: 'tt0317248',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BOTMwYjc5ZmItYTFjZC00ZGQ3LTlkNTMtMjZiNTZlMWQzNzI5XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7273_AL_.jpg',
+      title: 'City of God',
+      description: '(2002) aka "Ciudad de Dios"',
+    },
+    {
+      id: 'tt0033467',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BYjBiOTYxZWItMzdiZi00NjlkLWIzZTYtYmFhZjhiMTljOTdkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_Ratio0.7273_AL_.jpg',
+      title: 'Citizen Kane',
+      description: '(1941) aka "El ciudadano"',
+    },
+    {
+      id: 'tt0458481',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BMjA5ODYwNjgxMF5BMl5BanBnXkFtZTgwMTcwNzAyMjE@._V1_Ratio0.7273_AL_.jpg',
+      title: 'Sin City: A Dame to Kill For',
+      description: '(2014) aka "Ciudad del pecado: Una dama por quien matar"',
+    },
+    {
+      id: 'tt0118929',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BMGExOGExM2UtNWM5ZS00OWEzLTllNzYtM2NlMTJlYjBlZTJkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_Ratio0.7273_AL_.jpg',
+      title: 'Dark City',
+      description: '(1998) aka "Ciudad en tinieblas"',
+    },
+    {
+      id: 'tt2677722',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BY2YyNTJjYmMtOGQxZC00N2UxLWEzNjMtOGU3ZjA2MGU1NjA5XkEyXkFqcGdeQXVyMTE1Nzg4NjY0._V1_Ratio0.7273_AL_.jpg',
+      title: 'City of Lies',
+      description: '(2018) aka "Ciudad de mentiras"',
+    },
+    {
+      id: 'tt1803868',
+      resultType: 'Title',
+      image:
+        'https://imdb-api.com/images/original/MV5BYTIxNGIwNTMtOGYyMS00YTdhLThiYWUtNGZhNDMxMTRmYmY2L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjk4NjI3OTI@._V1_Ratio2.0000_AL_.jpg',
+      title: 'Ciudad K',
+      description: '(2010) (TV Series)',
+    },
+  ],
+  searchType: 'Title',
+};
