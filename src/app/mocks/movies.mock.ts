@@ -3079,3 +3079,937 @@ export const searchMock = {
   ],
   searchType: 'Title',
 };
+
+export const premiersMock = {
+  items: [
+    {
+      id: 'tt10665338',
+      title: 'Halloween Kills',
+      fullTitle: 'Halloween Kills (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BM2RmMGY2Y2UtNjA1NS00NGE4LThiNzItMmE1NTk5NzI5NmE0XkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '106',
+      runtimeStr: '1h 46mins',
+      plot: 'The saga of Michael Myers and Laurie Strode continues in the next thrilling chapter of the Halloween series.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '46',
+      genres: 'Crime, Horror, Thriller',
+      genreList: [
+        {
+          key: 'Crime',
+          value: 'Crime',
+        },
+        {
+          key: 'Horror',
+          value: 'Horror',
+        },
+        {
+          key: 'Thriller',
+          value: 'Thriller',
+        },
+      ],
+      directors: 'David Gordon Green',
+      directorList: [
+        {
+          id: 'nm0337773',
+          name: 'David Gordon Green',
+        },
+      ],
+      stars: 'Jamie Lee Curtis, Judy Greer, Andi Matichak, James Jude Courtney',
+      starList: [
+        {
+          id: 'nm0000130',
+          name: 'Jamie Lee Curtis',
+        },
+        {
+          id: 'nm0339460',
+          name: 'Judy Greer',
+        },
+        {
+          id: 'nm5506858',
+          name: 'Andi Matichak',
+        },
+        {
+          id: 'nm0183921',
+          name: 'James Jude Courtney',
+        },
+      ],
+    },
+    {
+      id: 'tt4244994',
+      title: 'The Last Duel',
+      fullTitle: 'The Last Duel (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BZGExZTUzYWQtYWJjZi00OTI4LTk4OGYtNTA2YzcwMmNiZTMxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '152',
+      runtimeStr: '2h 32mins',
+      plot: 'King Charles VI declares that Knight Jean de Carrouges settle his dispute with his squire by challenging him to a duel.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '65',
+      genres: 'Action, Drama, History',
+      genreList: [
+        {
+          key: 'Action',
+          value: 'Action',
+        },
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'History',
+          value: 'History',
+        },
+      ],
+      directors: 'Ridley Scott',
+      directorList: [
+        {
+          id: 'nm0000631',
+          name: 'Ridley Scott',
+        },
+      ],
+      stars: 'Matt Damon, Adam Driver, Jodie Comer, Harriet Walter',
+      starList: [
+        {
+          id: 'nm0000354',
+          name: 'Matt Damon',
+        },
+        {
+          id: 'nm3485845',
+          name: 'Adam Driver',
+        },
+        {
+          id: 'nm3069650',
+          name: 'Jodie Comer',
+        },
+        {
+          id: 'nm0910040',
+          name: 'Harriet Walter',
+        },
+      ],
+    },
+    {
+      id: 'tt6910282',
+      title: 'Bergman Island',
+      fullTitle: 'Bergman Island (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMzUyMjIzOTMtMjlmZi00MWM4LWEwYmMtYmIyNzc0Mjk5YzEyXkEyXkFqcGdeQXVyMTE1MzI2NzIz._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '112',
+      runtimeStr: '1h 52mins',
+      plot: 'A couple retreat to the island that inspired Ingmar Bergman to write screenplays for their upcoming films when the lines between reality and fiction start to blur.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '79',
+      genres: 'Drama',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+      ],
+      directors: 'Mia Hansen-Løve',
+      directorList: [
+        {
+          id: 'nm0361135',
+          name: 'Mia Hansen-Løve',
+        },
+      ],
+      stars: 'Vicky Krieps, Tim Roth, Grace Delrue, Mia Wasikowska',
+      starList: [
+        {
+          id: 'nm3043279',
+          name: 'Vicky Krieps',
+        },
+        {
+          id: 'nm0000619',
+          name: 'Tim Roth',
+        },
+        {
+          id: 'nm11570607',
+          name: 'Grace Delrue',
+        },
+        {
+          id: 'nm1985859',
+          name: 'Mia Wasikowska',
+        },
+      ],
+    },
+    {
+      id: 'tt7099280',
+      title: 'Needle in a Timestack',
+      fullTitle: 'Needle in a Timestack (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BNjBlZTkwOWYtNTQwYS00MTBkLTgzNjItMWZlMmM3MWI1ODFjXkEyXkFqcGdeQXVyMTMwMDA5ODU3._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '111',
+      runtimeStr: '1h 51mins',
+      plot: "Nick and Janine live in marital bliss until Janine's ex-husband warps time to try to tear them apart. As Nick's memories disappear, he must decide what he's willing to sacrifice in order to hold onto - or let go of - everything he loves.",
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Romance, Sci-Fi',
+      genreList: [
+        {
+          key: 'Romance',
+          value: 'Romance',
+        },
+        {
+          key: 'Sci-Fi',
+          value: 'Sci-Fi',
+        },
+      ],
+      directors: 'John Ridley',
+      directorList: [
+        {
+          id: 'nm0725983',
+          name: 'John Ridley',
+        },
+      ],
+      stars: 'Leslie Odom Jr., Freida Pinto, Orlando Bloom, Laysla De Oliveira',
+      starList: [
+        {
+          id: 'nm1502434',
+          name: 'Leslie Odom Jr.',
+        },
+        {
+          id: 'nm2951768',
+          name: 'Freida Pinto',
+        },
+        {
+          id: 'nm0089217',
+          name: 'Orlando Bloom',
+        },
+        {
+          id: 'nm5315658',
+          name: 'Laysla De Oliveira',
+        },
+      ],
+    },
+    {
+      id: 'tt8709338',
+      title: 'Hard Luck Love Song',
+      fullTitle: 'Hard Luck Love Song (2020)',
+      year: '2020',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BYTgyNzRmNWYtZTNhYi00ZmIzLTk0YTMtYjg5NzBiZTVmMzAyXkEyXkFqcGdeQXVyNDg5MTY2Ng@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '104',
+      runtimeStr: '1h 44mins',
+      plot: 'A gritty love story about a charismatic but down-on-his-luck troubadour living out of cheap motels and making bad decisions.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Drama, Music, Romance, Thriller',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Music',
+          value: 'Music',
+        },
+        {
+          key: 'Romance',
+          value: 'Romance',
+        },
+        {
+          key: 'Thriller',
+          value: 'Thriller',
+        },
+      ],
+      directors: 'Justin Corsbie',
+      directorList: [
+        {
+          id: 'nm2594946',
+          name: 'Justin Corsbie',
+        },
+      ],
+      stars: 'Michael Dorman, Sophia Bush, Dermot Mulroney, RZA',
+      starList: [
+        {
+          id: 'nm1168915',
+          name: 'Michael Dorman',
+        },
+        {
+          id: 'nm0124208',
+          name: 'Sophia Bush',
+        },
+        {
+          id: 'nm0000551',
+          name: 'Dermot Mulroney',
+        },
+        {
+          id: 'nm0753526',
+          name: 'RZA',
+        },
+      ],
+    },
+    {
+      id: 'tt8241000',
+      title: 'Extinct',
+      fullTitle: 'Extinct (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BZjAzMDIxZDItNTRiMC00MWM4LTkwOTMtMTljZmQxNDdhMmE0XkEyXkFqcGdeQXVyMTI2ODM1ODUw._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '84',
+      runtimeStr: '1h 24mins',
+      plot: 'Op and Ed accidentally time-travel from the Galapagos Islands in 1835 to present-day Shanghai. They make their way through the city in confusion and make the horrifying discovery that the species to which they belong became extinct shortly after.',
+      contentRating: '0',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Animation, Adventure, Comedy, Family',
+      genreList: [
+        {
+          key: 'Animation',
+          value: 'Animation',
+        },
+        {
+          key: 'Adventure',
+          value: 'Adventure',
+        },
+        {
+          key: 'Comedy',
+          value: 'Comedy',
+        },
+        {
+          key: 'Family',
+          value: 'Family',
+        },
+      ],
+      directors: 'David Silverman, Raymond S. Persi',
+      directorList: [
+        {
+          id: 'nm0798899',
+          name: 'David Silverman',
+        },
+        {
+          id: 'nm0675442',
+          name: 'Raymond S. Persi',
+        },
+      ],
+      stars: 'Adam Devine, Rachel Bloom, Ken Jeong, Zazie Beetz',
+      starList: [
+        {
+          id: 'nm2796745',
+          name: 'Adam Devine',
+        },
+        {
+          id: 'nm3417385',
+          name: 'Rachel Bloom',
+        },
+        {
+          id: 'nm0421822',
+          name: 'Ken Jeong',
+        },
+        {
+          id: 'nm5939164',
+          name: 'Zazie Beetz',
+        },
+      ],
+    },
+    {
+      id: 'tt8456190',
+      title: 'Seal Team',
+      fullTitle: 'Seal Team (2021)',
+      year: '2021',
+      releaseState: 'Opening This Week - October 15',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BNzVhMzdlMTEtZDk3Yi00YmYyLTg0ZmYtZTlkMDY5OTAyZDQ5XkEyXkFqcGdeQXVyMzY3MzcyNTE@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '98',
+      runtimeStr: '1h 38mins',
+      plot: "After his best friend is killed in a shark attack, Quinn, a lovable yet tenacious seal assembles a SEAL TEAM to fight back against a gang of sharks overtaking the neighborhood. But this merry band of international seals are not at all trained for such a mission. They seek the help of a much more skillful combatant, Claggart, but even his tricks and flips can't whip these guys into shape. However, with a little bit of ingenuity, intelligence and a lot of heart, our SEAL TEAM may actually be able to bring peace back to their undersea community.",
+      contentRating: '',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Animation',
+      genreList: [
+        {
+          key: 'Animation',
+          value: 'Animation',
+        },
+      ],
+      directors: 'Greig Cameron, Kane Croudace',
+      directorList: [
+        {
+          id: 'nm4248415',
+          name: 'Greig Cameron',
+        },
+        {
+          id: 'nm3568340',
+          name: 'Kane Croudace',
+        },
+      ],
+      stars: 'J.K. Simmons, Kristen Schaal, Sharlto Copley, Patrick Warburton',
+      starList: [
+        {
+          id: 'nm0799777',
+          name: 'J.K. Simmons',
+        },
+        {
+          id: 'nm1102891',
+          name: 'Kristen Schaal',
+        },
+        {
+          id: 'nm1663205',
+          name: 'Sharlto Copley',
+        },
+        {
+          id: 'nm0911320',
+          name: 'Patrick Warburton',
+        },
+      ],
+    },
+  ],
+  errorMessage: '',
+};
+
+export const comingSoonMock = {
+  items: [
+    {
+      id: 'tt1160419',
+      title: 'Dune',
+      fullTitle: 'Dune (2021)',
+      year: '2021',
+      releaseState: 'October 22',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BN2FjNmEyNWMtYzM0ZS00NjIyLTg5YzYtYThlMGVjNzE1OGViXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '155',
+      runtimeStr: '2h 35mins',
+      plot: "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.",
+      contentRating: 'PG-13',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '75',
+      genres: 'Action, Adventure, Drama, Sci-Fi',
+      genreList: [
+        {
+          key: 'Action',
+          value: 'Action',
+        },
+        {
+          key: 'Adventure',
+          value: 'Adventure',
+        },
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Sci-Fi',
+          value: 'Sci-Fi',
+        },
+      ],
+      directors: 'Denis Villeneuve',
+      directorList: [
+        {
+          id: 'nm0898288',
+          name: 'Denis Villeneuve',
+        },
+      ],
+      stars: 'Timothée Chalamet, Rebecca Ferguson, Zendaya, Oscar Isaac',
+      starList: [
+        {
+          id: 'nm3154303',
+          name: 'Timothée Chalamet',
+        },
+        {
+          id: 'nm0272581',
+          name: 'Rebecca Ferguson',
+        },
+        {
+          id: 'nm3918035',
+          name: 'Zendaya',
+        },
+        {
+          id: 'nm1209966',
+          name: 'Oscar Isaac',
+        },
+      ],
+    },
+    {
+      id: 'tt8847712',
+      title: 'The French Dispatch',
+      fullTitle: 'The French Dispatch (2021)',
+      year: '2021',
+      releaseState: 'October 22',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BNmQxZTNiODYtNzBhYy00MzVlLWJlN2UtNTc4YWZjMDIwMmEzXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '108',
+      runtimeStr: '1h 48mins',
+      plot: 'A love letter to journalists set in an outpost of an American newspaper in a fictional twentieth century French city that brings to life a collection of stories published in "The French Dispatch Magazine".',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '83',
+      genres: 'Comedy, Drama, Romance',
+      genreList: [
+        {
+          key: 'Comedy',
+          value: 'Comedy',
+        },
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Romance',
+          value: 'Romance',
+        },
+      ],
+      directors: 'Wes Anderson',
+      directorList: [
+        {
+          id: 'nm0027572',
+          name: 'Wes Anderson',
+        },
+      ],
+      stars: 'Léa Seydoux, Timothée Chalamet, Christoph Waltz, Owen Wilson',
+      starList: [
+        {
+          id: 'nm2244205',
+          name: 'Léa Seydoux',
+        },
+        {
+          id: 'nm3154303',
+          name: 'Timothée Chalamet',
+        },
+        {
+          id: 'nm0910607',
+          name: 'Christoph Waltz',
+        },
+        {
+          id: 'nm0005562',
+          name: 'Owen Wilson',
+        },
+      ],
+    },
+    {
+      id: 'tt7504818',
+      title: "Ron's Gone Wrong",
+      fullTitle: "Ron's Gone Wrong (2021)",
+      year: '2021',
+      releaseState: 'October 22',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMzMxMjllYTgtZWNjZS00ODc0LTljZWUtYjdiMDQ2ZDJkM2FkXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '106',
+      runtimeStr: '1h 46mins',
+      plot: "The story of Barney, an awkward middle-schooler and Ron, his new walking, talking, digitally-connected device. Ron's malfunctions set against the backdrop of the social media age launch them on a journey to learn about true friendship.",
+      contentRating: 'PG',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Animation, Adventure, Comedy, Family, Sci-Fi',
+      genreList: [
+        {
+          key: 'Animation',
+          value: 'Animation',
+        },
+        {
+          key: 'Adventure',
+          value: 'Adventure',
+        },
+        {
+          key: 'Comedy',
+          value: 'Comedy',
+        },
+        {
+          key: 'Family',
+          value: 'Family',
+        },
+        {
+          key: 'Sci-Fi',
+          value: 'Sci-Fi',
+        },
+      ],
+      directors: 'Sarah Smith, Jean-Philippe Vine, Octavio E. Rodriguez',
+      directorList: [
+        {
+          id: 'nm0809877',
+          name: 'Sarah Smith',
+        },
+        {
+          id: 'nm2190815',
+          name: 'Jean-Philippe Vine',
+        },
+        {
+          id: 'nm3185614',
+          name: 'Octavio E. Rodriguez',
+        },
+      ],
+      stars: 'Zach Galifianakis, Jack Dylan Grazer, Olivia Colman, Ed Helms',
+      starList: [
+        {
+          id: 'nm0302108',
+          name: 'Zach Galifianakis',
+        },
+        {
+          id: 'nm6244013',
+          name: 'Jack Dylan Grazer',
+        },
+        {
+          id: 'nm1469236',
+          name: 'Olivia Colman',
+        },
+        {
+          id: 'nm1159180',
+          name: 'Ed Helms',
+        },
+      ],
+    },
+    {
+      id: 'tt11151336',
+      title: 'Broadcast Signal Intrusion',
+      fullTitle: 'Broadcast Signal Intrusion (2021)',
+      year: '2021',
+      releaseState: 'October 22',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BYzA0MjQ5M2ItY2QzMi00ODg0LTgwNmUtNzJhM2QyNDZlYzNlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '104',
+      runtimeStr: '1h 44mins',
+      plot: 'In the late 90s, a video archivist unearths a series of sinister pirate broadcasts and becomes obsessed with uncovering the dark conspiracy behind them.',
+      contentRating: '16',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Crime, Drama, Horror, Mystery, Thriller',
+      genreList: [
+        {
+          key: 'Crime',
+          value: 'Crime',
+        },
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Horror',
+          value: 'Horror',
+        },
+        {
+          key: 'Mystery',
+          value: 'Mystery',
+        },
+        {
+          key: 'Thriller',
+          value: 'Thriller',
+        },
+      ],
+      directors: 'Jacob Gentry',
+      directorList: [
+        {
+          id: 'nm1402180',
+          name: 'Jacob Gentry',
+        },
+      ],
+      stars: 'Harry Shum Jr., Kelley Mack, Chris Sullivan, Anthony E. Cabral',
+      starList: [
+        {
+          id: 'nm1484270',
+          name: 'Harry Shum Jr.',
+        },
+        {
+          id: 'nm2965015',
+          name: 'Kelley Mack',
+        },
+        {
+          id: 'nm2884388',
+          name: 'Chris Sullivan',
+        },
+        {
+          id: 'nm1809004',
+          name: 'Anthony E. Cabral',
+        },
+      ],
+    },
+    {
+      id: 'tt8956324',
+      title: 'Warning',
+      fullTitle: 'Warning (2021)',
+      year: '2021',
+      releaseState: 'October 22',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BYmEzYjE0NGQtZTg1Ni00NDFmLWExZDYtNTZjNDdlMmE3NWFiXkEyXkFqcGdeQXVyOTg4MDYyNw@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '85',
+      runtimeStr: '1h 25mins',
+      plot: 'The meaning of life explored through multiple interconnected lives set in the near future.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Sci-Fi, Thriller',
+      genreList: [
+        {
+          key: 'Sci-Fi',
+          value: 'Sci-Fi',
+        },
+        {
+          key: 'Thriller',
+          value: 'Thriller',
+        },
+      ],
+      directors: 'Agata Alexander',
+      directorList: [
+        {
+          id: 'nm4602143',
+          name: 'Agata Alexander',
+        },
+      ],
+      stars: 'Annabelle Wallis, Kylie Bunbury, Alice Eve, Thomas Jane',
+      starList: [
+        {
+          id: 'nm1834115',
+          name: 'Annabelle Wallis',
+        },
+        {
+          id: 'nm3954896',
+          name: 'Kylie Bunbury',
+        },
+        {
+          id: 'nm1404408',
+          name: 'Alice Eve',
+        },
+        {
+          id: 'nm0005048',
+          name: 'Thomas Jane',
+        },
+      ],
+    },
+    {
+      id: 'tt7740510',
+      title: 'Antlers',
+      fullTitle: 'Antlers (2021)',
+      year: '2021',
+      releaseState: 'October 29',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BY2UzODAyNjktN2MwYy00M2RkLThiOTEtMjU1MTgxY2EzM2YyXkEyXkFqcGdeQXVyODk5MDA0MDU@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '99',
+      runtimeStr: '1h 39mins',
+      plot: 'In an isolated Oregon town, a middle-school teacher and her sheriff brother become embroiled with her enigmatic student, whose dark secrets lead to terrifying encounters with a legendary ancestral creature who came before them.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Drama, Horror, Mystery',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Horror',
+          value: 'Horror',
+        },
+        {
+          key: 'Mystery',
+          value: 'Mystery',
+        },
+      ],
+      directors: 'Scott Cooper',
+      directorList: [
+        {
+          id: 'nm0178376',
+          name: 'Scott Cooper',
+        },
+      ],
+      stars: 'Keri Russell, Jesse Plemons, Jeremy T. Thomas, Graham Greene',
+      starList: [
+        {
+          id: 'nm0005392',
+          name: 'Keri Russell',
+        },
+        {
+          id: 'nm0687146',
+          name: 'Jesse Plemons',
+        },
+        {
+          id: 'nm8864596',
+          name: 'Jeremy T. Thomas',
+        },
+        {
+          id: 'nm0001295',
+          name: 'Graham Greene',
+        },
+      ],
+    },
+    {
+      id: 'tt9639470',
+      title: 'Last Night in Soho',
+      fullTitle: 'Last Night in Soho (2021)',
+      year: '2021',
+      releaseState: 'October 29',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BZjgwZDIwY2MtNGZlNy00NGRlLWFmNTgtOTBkZThjMDUwMGJhXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '116',
+      runtimeStr: '1h 56mins',
+      plot: 'An aspiring fashion designer is mysteriously able to enter the 1960s where she encounters a dazzling wannabe singer. But the glamour is not all it appears to be and the dreams of the past start to crack and splinter into something darker.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '67',
+      genres: 'Drama, Horror, Mystery, Thriller',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+        {
+          key: 'Horror',
+          value: 'Horror',
+        },
+        {
+          key: 'Mystery',
+          value: 'Mystery',
+        },
+        {
+          key: 'Thriller',
+          value: 'Thriller',
+        },
+      ],
+      directors: 'Edgar Wright',
+      directorList: [
+        {
+          id: 'nm0942367',
+          name: 'Edgar Wright',
+        },
+      ],
+      stars: 'Thomasin McKenzie, Anya Taylor-Joy, Matt Smith, Diana Rigg',
+      starList: [
+        {
+          id: 'nm5057169',
+          name: 'Thomasin McKenzie',
+        },
+        {
+          id: 'nm5896355',
+          name: 'Anya Taylor-Joy',
+        },
+        {
+          id: 'nm1741002',
+          name: 'Matt Smith',
+        },
+        {
+          id: 'nm0001671',
+          name: 'Diana Rigg',
+        },
+      ],
+    },
+    {
+      id: 'tt6992978',
+      title: 'The Souvenir: Part II',
+      fullTitle: 'The Souvenir: Part II (2021)',
+      year: '2021',
+      releaseState: 'October 29',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BODllMjY0MWYtNTMzMi00MDU4LTllZjItY2ViMDkwNDRmZTI0XkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '106',
+      runtimeStr: '1h 46mins',
+      plot: 'In the aftermath of her tumultuous relationship, Julie begins to untangle her fraught love for him in making her graduation film, sorting fact from his elaborately constructed fiction.',
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '98',
+      genres: 'Drama',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+      ],
+      directors: 'Joanna Hogg',
+      directorList: [
+        {
+          id: 'nm0389712',
+          name: 'Joanna Hogg',
+        },
+      ],
+      stars:
+        'Tilda Swinton, Honor Swinton Byrne, James Spencer Ashworth, Alice McMillan',
+      starList: [
+        {
+          id: 'nm0842770',
+          name: 'Tilda Swinton',
+        },
+        {
+          id: 'nm4944898',
+          name: 'Honor Swinton Byrne',
+        },
+        {
+          id: 'nm10488416',
+          name: 'James Spencer Ashworth',
+        },
+        {
+          id: 'nm8205905',
+          name: 'Alice McMillan',
+        },
+      ],
+    },
+    {
+      id: 'tt10925852',
+      title: 'A Mouthful of Air',
+      fullTitle: 'A Mouthful of Air (2021)',
+      year: '2021',
+      releaseState: 'October 29',
+      image:
+        'https://m.media-amazon.com/images/M/MV5BMTlmYjQwNjAtMTY0Yi00ZjJmLThmNTktZWUwYzNmYTQ3YjA2XkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_UX128_CR0,4,128,176_AL_.jpg',
+      runtimeMins: '',
+      runtimeStr: '',
+      plot: "Julie Davis writes bestselling children's books about unlocking your fears, but has yet to unlock her own. When her daughter is born, that trauma is brought to the fore, and with it, a crushing battle to survive.",
+      contentRating: 'R',
+      imDbRating: '',
+      imDbRatingCount: '',
+      metacriticRating: '',
+      genres: 'Drama',
+      genreList: [
+        {
+          key: 'Drama',
+          value: 'Drama',
+        },
+      ],
+      directors: 'Amy Koppelman',
+      directorList: [
+        {
+          id: 'nm6508110',
+          name: 'Amy Koppelman',
+        },
+      ],
+      stars:
+        'Amanda Seyfried, Britt Robertson, Paul Giamatti, Jennifer Carpenter',
+      starList: [
+        {
+          id: 'nm1086543',
+          name: 'Amanda Seyfried',
+        },
+        {
+          id: 'nm1429380',
+          name: 'Britt Robertson',
+        },
+        {
+          id: 'nm0316079',
+          name: 'Paul Giamatti',
+        },
+        {
+          id: 'nm1358539',
+          name: 'Jennifer Carpenter',
+        },
+      ],
+    },
+  ],
+  errorMessage: '',
+};

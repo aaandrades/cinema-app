@@ -8,6 +8,8 @@ export interface MoviesState {
   loading: Boolean;
   currentMovie?: any;
   searchResults?: any;
+  premiers?: any;
+  comingSoon?: any;
 }
 
 export interface MovieInterface {
@@ -32,6 +34,11 @@ export interface MassiveResultsInterface {
   expression: string;
   results: Array<any>;
   searchType: string;
+}
+
+export interface PremiersInterface {
+  items: Array<any>;
+  errorMessage: string;
 }
 
 export const initialSearch = {

@@ -16,3 +16,13 @@ export const searchMovieSelector = createSelector(
   movieState,
   (state: MoviesState) => state.searchResults?.results
 );
+
+export const premiersMovieSelector = createSelector(
+  movieState,
+  (state: MoviesState) => state.premiers
+);
+
+export const comingSoonSelector = createSelector(
+  movieState,
+  (state: MoviesState) => state.comingSoon
+);

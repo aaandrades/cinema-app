@@ -12,11 +12,15 @@ import {
   catchError,
   concatMap,
   withLatestFrom,
+  mergeMap,
 } from 'rxjs/operators';
 import * as movies from '../actions/movies.actions';
 import { userSelector } from '../selector/user.selector';
 import { AlertsMessagesType } from '../../enums/AlertMessageTypes';
-import { fetchMovieByExpression } from '../actions/movies.actions';
+import {
+  fetchMovieByExpression,
+  fetchNewMoviesSuccessAction,
+} from '../actions/movies.actions';
 
 @Injectable()
 export class MoviesEffects {
@@ -38,8 +42,8 @@ export class MoviesEffects {
       switchMap(([userState]) =>
         this.movieService.getMovies(userState.response.tokenApi).pipe(
           map((response: any) => {
-            if (response.errorMessage === 'Invalid API Key') {
-              throw new Error('FAILED FETCH API');
+            if (response.errorMessage !== '') {
+              throw new Error(response.errorMessage);
             }
             return movies.fetchMoviesSuccessAction({
               results: response.items,
@@ -69,8 +73,8 @@ export class MoviesEffects {
       switchMap(([action, userState]) =>
         this.movieService.getMovieById(userState.token_api, action.id).pipe(
           map((response: any) => {
-            if (response.errorMessage === 'Invalid API Key') {
-              throw new Error('FAILED FETCH API');
+            if (response.errorMessage !== '') {
+              throw new Error(response.errorMessage);
             }
             return movies.fetchMovieByIdSuccessAction({
               currentMovie: response,
@@ -102,9 +106,8 @@ export class MoviesEffects {
           .getMovieByExpression(userState.token_api, action.expression)
           .pipe(
             map((response: any) => {
-              console.log('RESPONSE: ', response);
-              if (response.errorMessage === 'Invalid API Key') {
-                throw new Error('FAILED FETCH API');
+              if (response.errorMessage !== '') {
+                throw new Error(response.errorMessage);
               }
               return movies.fetchMovieByExpressionSuccessAction({
                 searchResults: response,
@@ -119,6 +122,68 @@ export class MoviesEffects {
               );
             })
           )
+      )
+    )
+  );
+
+  fetchPremiersMoviesEffect$: Observable<Action> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(movies.fetchPremiersAction),
+      concatMap((userState) =>
+        of(userState).pipe(
+          withLatestFrom(this.store.pipe(select(userSelector)))
+        )
+      ),
+      switchMap(([_, userState]) =>
+        this.movieService.getPremiersMovies(userState.token_api).pipe(
+          map((response: any) => {
+            if (response.errorMessage !== '') {
+              throw new Error(response.errorMessage);
+            }
+            return movies.fetchPremiersActionSuccess({
+              premiers: response.items,
+            });
+          }),
+          catchError((err) => {
+            console.error('ERROR IN : ', err);
+            return of(
+              movies.fetchMoviesErrorAction({
+                message: AlertsMessagesType.ERROR_FETCHING_MOVIES,
+              })
+            );
+          })
+        )
+      )
+    )
+  );
+
+  fetchNewMoviesEffect$: Observable<Action> = createEffect(() =>
+    this.actions$.pipe(
+      ofType(movies.fetchPremiersActionSuccess),
+      concatMap((userState) =>
+        of(userState).pipe(
+          withLatestFrom(this.store.pipe(select(userSelector)))
+        )
+      ),
+      switchMap(([_, userState]) =>
+        this.movieService.getNewMovies(userState.token_api).pipe(
+          map((response: any) => {
+            if (response.errorMessage !== '') {
+              throw new Error(response.errorMessage);
+            }
+            return movies.fetchNewMoviesSuccessAction({
+              comingSoon: response.items,
+            });
+          }),
+          catchError((err) => {
+            console.error('ERROR IN : ', err);
+            return of(
+              movies.fetchMoviesErrorAction({
+                message: AlertsMessagesType.ERROR_FETCHING_MOVIES,
+              })
+            );
+          })
+        )
       )
     )
   );

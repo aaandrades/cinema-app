@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ResultsInterface, MassiveResultsInterface } from '../store/model/movies.state';
+import {
+  ResultsInterface,
+  MassiveResultsInterface,
+} from '../store/model/movies.state';
 import { Observable, of } from 'rxjs';
-import { searchMock } from '../mocks/movies.mock';
+import { searchMock, premiersMock, comingSoonMock } from '../mocks/movies.mock';
+import { PremiersInterface } from '../store/model/movies.state';
 
 @Injectable({
   providedIn: 'root',
@@ -18,15 +22,32 @@ export class MoviesService {
       this.BASE_URL + 'Top250Movies/' + tokenApi
     );
   }
+
   getMovieById(tokenApi: string, id: string): Observable<ResultsInterface> {
     return this.http.get<any>(
-      `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}` 
-      // `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${'k_3o18c1sm'}/${id}` 
+      `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}`
+      // `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${'k_3o18c1sm'}/${id}`
     );
   }
 
-  getMovieByExpression(tokenApi: string, expression: string): Observable<MassiveResultsInterface> {
-    return of(searchMock)
+  getMovieByExpression(
+    tokenApi: string,
+    expression: string
+  ): Observable<MassiveResultsInterface> {
+    return of(searchMock);
     // return this.http.get<any>(`${this.BASE_URL}Search/${'k_3o18c1sm'}/${expression}`)
+    // return this.http.get<any>(`${this.BASE_URL}Search/${tokenApi}/${expression}`)
+  }
+
+  getPremiersMovies(tokenApi: string): Observable<PremiersInterface> {
+    return of(premiersMock);
+    // return this.http.get<any>(`${this.BASE_URL}InTheaters/${'k_3o18c1sm'}`)
+    // return this.http.get<any>(`${this.BASE_URL}InTheaters/${tokenApi}`)
+  }
+
+  getNewMovies(tokenApi: string): Observable<PremiersInterface> {
+    return of(comingSoonMock);
+    // return this.http.get<any>(`${this.BASE_URL}ComingSoon/${'k_3o18c1sm'}`)
+    // return this.http.get<any>(`${this.BASE_URL}ComingSoon/${tokenApi}`)
   }
 }

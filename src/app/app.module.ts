@@ -28,6 +28,7 @@ import { ModalEffects } from './store/effects/modal.effects';
 import { DetailsComponent } from './components/pages/details/details.component';
 
 import { SwiperModule } from 'swiper/angular';
+import { PremiersComponent } from './components/pages/premiers/premiers.component';
 
 
 export const userFeatureName = 'userState';
@@ -44,6 +45,7 @@ export const moviesFeatureName = 'moviesState';
     NavbarComponent,
     CustomModalComponent,
     DetailsComponent,
+    PremiersComponent,
   ],
   imports: [
     FormsModule,

@@ -1,6 +1,10 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as moviesActions from '../actions/movies.actions';
-import { initialMovieState, initialSearch, MoviesState } from '../model/movies.state';
+import {
+  initialMovieState,
+  initialSearch,
+  MoviesState,
+} from '../model/movies.state';
 
 const multipleMovieReducer = createReducer(
   initialMovieState,
@@ -25,11 +29,24 @@ const multipleMovieReducer = createReducer(
       loading: false,
     })
   ),
+  on(moviesActions.clearCurrentSearchAction, (state: MoviesState) => ({
+    ...state,
+    searchResults: initialSearch,
+    loading: false,
+  })),
   on(
-    moviesActions.clearCurrentSearchAction,
-    (state: MoviesState) => ({
+    moviesActions.fetchPremiersActionSuccess,
+    (state: MoviesState, response) => ({
       ...state,
-      searchResults: initialSearch,
+      premiers: response.premiers,
+      loading: false,
+    })
+  ),
+  on(
+    moviesActions.fetchNewMoviesSuccessAction,
+    (state: MoviesState, response) => ({
+      ...state,
+      comingSoon: response.comingSoon,
       loading: false,
     })
   )

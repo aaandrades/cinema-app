@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
 import { SearchComponent } from './components/pages/search/search.component';
 import { LoginGuard } from './guards/login.guard';
 import { DetailsComponent } from './components/pages/details/details.component';
+import { PremiersComponent } from './components/pages/premiers/premiers.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent,
+    // canActivate: [LoginGuard],
+  },
+  {
+    path: 'premiers',
+    component: PremiersComponent,
     // canActivate: [LoginGuard],
   },
   {
