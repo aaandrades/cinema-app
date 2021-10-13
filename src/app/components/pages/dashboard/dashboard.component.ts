@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MoviesFacade } from 'src/app/store/facade/movies.facade';
 import { moviesMock } from 'src/app/mocks/movies.mock';
 import { MovieInterface } from '../../../store/model/movies.state';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dashboard',

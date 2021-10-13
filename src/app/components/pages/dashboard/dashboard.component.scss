@@ -8,6 +8,7 @@
 }
 .container {
   color: $tertiary-color;
+  background-color: $gray-300;
   @media only screen and (min-width: 600px) {
     display: grid;
     grid-template-columns: 5% 95%;
