@@ -1,4 +1,5 @@
 import { Component, Output, OnInit, EventEmitter } from '@angular/core';
+import { UserFacade } from 'src/app/store/facade/user.facade';
 import { Constants } from '../../helpers/Constants';
 @Component({
   selector: 'app-helper-dialog',
@@ -9,13 +10,14 @@ export class HelperDialogComponent {
   @Output() defaultCredentials = new EventEmitter<defaulCredentialsInterface>();
   showDialog = false;
 
-  constructor() {}
+  constructor(private userFacade: UserFacade) {}
 
   showDialogClick(): void {
     this.showDialog = !this.showDialog;
   }
 
   returnDefaultValues(): void {
+    this.userFacade.setPublicUser();
     this.defaultCredentials.emit({
       user: Constants.defaultUser,
       password: Constants.defaultPassword,

@@ -1,6 +1,31 @@
 <div class="modal-container" *ngIf="showModal">
   <div class="modal-container__modal">
-    <span class="modal-container__modal__title">{{ alertInfo.title }}</span>
+    <div class="header-modal">
+      <span [ngSwitch]="alertInfo.type">
+        <img
+          *ngSwitchCase="'success'"
+          class="modal-image"
+          src="../../../assets/success.png"
+        />
+        <img
+          *ngSwitchCase="'error'"
+          class="modal-image"
+          src="../../../assets/error.png"
+        />
+        <img
+          *ngSwitchDefault
+          class="modal-image"
+          src="../../../assets/error.png"
+        />
+      </span>
+      <img />
+      <span
+        *ngIf="alertInfo.title !== ''"
+        class="modal-container__modal__title"
+        [ngClass]="alertInfo.type === 'success' ? 'success' : 'error'"
+        >{{ alertInfo.title }}</span
+      >
+    </div>
     <div class="modal-container__modal__description">
       <span>{{ alertInfo.message }}</span>
     </div>

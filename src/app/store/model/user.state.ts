@@ -1,19 +1,23 @@
 export const initialUserState: UserState = {
   name: '',
+  id: '',
   role: '',
   email: '',
   token: '',
   token_api: '',
   loading: false,
+  publicUser: false,
 };
 
 export interface UserState {
+  id: string;
   name: string;
   role: string;
   email: string;
   token: string;
   token_api: string;
   loading: boolean;
+  publicUser: boolean;
 }
 
 export interface LoginResponse {
@@ -21,6 +25,7 @@ export interface LoginResponse {
 }
 
 interface Response {
+  _id: string;
   ok: Boolean;
   token: string;
   tokenApi: string;
@@ -28,6 +33,7 @@ interface Response {
 }
 
 export interface UserResponse {
+  _id: string;
   email: string;
   google: Boolean;
   name: string;

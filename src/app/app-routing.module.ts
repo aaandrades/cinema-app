@@ -7,6 +7,7 @@ import { SearchComponent } from './components/pages/search/search.component';
 import { LoginGuard } from './guards/login.guard';
 import { DetailsComponent } from './components/pages/details/details.component';
 import { PremiersComponent } from './components/pages/premiers/premiers.component';
+import { UsersComponent } from './components/pages/users/users.component';
 
 const routes: Routes = [
   {
@@ -16,22 +17,27 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
   },
   {
     path: 'search',
     component: SearchComponent,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
   },
   {
     path: 'details',
     component: DetailsComponent,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
   },
   {
     path: 'premiers',
     component: PremiersComponent,
-    // canActivate: [LoginGuard],
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'users',
+    component: UsersComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'login',

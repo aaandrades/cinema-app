@@ -52,6 +52,7 @@ export class LoginPageComponent {
   fastSubmit() {
     this.validUser = true;
     this.validPassword = true;
+    this.userFacade.setPublicUser();
     this.userFacade.initLogin({
       email: Constants.defaultUser,
       password: Constants.defaultPassword,

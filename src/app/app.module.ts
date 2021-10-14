@@ -29,6 +29,7 @@ import { DetailsComponent } from './components/pages/details/details.component';
 
 import { SwiperModule } from 'swiper/angular';
 import { PremiersComponent } from './components/pages/premiers/premiers.component';
+import { UsersComponent } from './components/pages/users/users.component';
 
 
 export const userFeatureName = 'userState';
@@ -46,6 +47,7 @@ export const moviesFeatureName = 'moviesState';
     CustomModalComponent,
     DetailsComponent,
     PremiersComponent,
+    UsersComponent,
   ],
   imports: [
     FormsModule,

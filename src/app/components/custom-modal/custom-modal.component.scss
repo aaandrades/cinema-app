@@ -1,4 +1,6 @@
 @import "../../../colors.scss";
+@import "../../../mixins.scss";
+
 .modal-container {
   width: 100vw;
   height: 100vh;
@@ -59,4 +61,20 @@
       transition: transform 100ms ease-in;
     }
   }
+}
+
+.modal-image {
+  width: 30px;
+}
+
+.header-modal {
+  @include vertical-container(false);
+}
+
+.success {
+  color: $success;
+}
+
+.error {
+  color: $error;
 }

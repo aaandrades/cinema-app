@@ -26,7 +26,6 @@ export class MoviesService {
   getMovieById(tokenApi: string, id: string): Observable<ResultsInterface> {
     return this.http.get<any>(
       `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}`
-      // `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${'k_3o18c1sm'}/${id}`
     );
   }
 
@@ -34,20 +33,17 @@ export class MoviesService {
     tokenApi: string,
     expression: string
   ): Observable<MassiveResultsInterface> {
-    return of(searchMock);
-    // return this.http.get<any>(`${this.BASE_URL}Search/${'k_3o18c1sm'}/${expression}`)
-    // return this.http.get<any>(`${this.BASE_URL}Search/${tokenApi}/${expression}`)
+    // return of(searchMock);
+    return this.http.get<any>(`${this.BASE_URL}Search/${tokenApi}/${expression}`)
   }
 
   getPremiersMovies(tokenApi: string): Observable<PremiersInterface> {
-    return of(premiersMock);
-    // return this.http.get<any>(`${this.BASE_URL}InTheaters/${'k_3o18c1sm'}`)
-    // return this.http.get<any>(`${this.BASE_URL}InTheaters/${tokenApi}`)
+    // return of(premiersMock);
+    return this.http.get<any>(`${this.BASE_URL}InTheaters/${tokenApi}`)
   }
 
   getNewMovies(tokenApi: string): Observable<PremiersInterface> {
-    return of(comingSoonMock);
-    // return this.http.get<any>(`${this.BASE_URL}ComingSoon/${'k_3o18c1sm'}`)
-    // return this.http.get<any>(`${this.BASE_URL}ComingSoon/${tokenApi}`)
+    // return of(comingSoonMock);
+    return this.http.get<any>(`${this.BASE_URL}ComingSoon/${tokenApi}`)
   }
 }
