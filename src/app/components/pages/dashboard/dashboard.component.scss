@@ -68,12 +68,10 @@
       grid-template-columns: 100%;
     }
     &__item {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
       margin: 20px;
       cursor: pointer;
       max-width: 200px;
+      max-height: 348px;
       &:hover {
         transform: scale(1.05) !important;
       }

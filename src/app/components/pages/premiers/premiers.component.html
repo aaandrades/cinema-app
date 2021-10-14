@@ -2,30 +2,40 @@
 <div class="container">
   <span></span>
   <div class="premiers-container">
-    <div class="premiers-container__card">
+    <div
+      class="premiers-container__card animate__animated animate__slideInLeft"
+    >
       <h2>Premiers</h2>
       <div class="premiers-container__card__movies">
         <ng-container *ngFor="let movie of premiers$ | async">
-          <div class="premiers-container__card__movie">
+          <div class="premiers-container__card__movie" (click)="goToDetails(movie.id)">
             <img
               src="{{ movie.image }}"
               class="premiers-container__card__image"
             />
-            <span>{{ movie.title }}</span>
+            <span class="title">{{ movie.title }}</span>
+            <span class="description">{{ movie.releaseState }}</span>
           </div>
         </ng-container>
       </div>
     </div>
-    <div class="premiers-container__card bottom-card">
+    <div
+      class="
+        premiers-container__card
+        bottom-card
+        animate__animated animate__slideInRight
+      "
+    >
       <h2>Coming soon</h2>
       <div class="premiers-container__card__movies">
         <ng-container *ngFor="let movie of comingSoon$ | async">
-          <div class="premiers-container__card__movie">
+          <div class="premiers-container__card__movie" (click)="goToDetails(movie.id)">
             <img
               src="{{ movie.image }}"
               class="premiers-container__card__image"
             />
-            <span>{{ movie.title }}</span>
+            <span class="title">{{ movie.title }}</span>
+            <span class="description">Release: {{ movie.releaseState }}</span>
           </div>
         </ng-container>
       </div>

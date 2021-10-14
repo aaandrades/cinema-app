@@ -22,8 +22,12 @@ export class PremiersComponent implements OnInit {
     if (!alreadyLoaded) {
       this.moviesFacade.getPremiersMovies();
     }
-    
+
     this.comingSoon$ = this.moviesFacade.comingSoon$;
     this.premiers$ = this.moviesFacade.premierMovies$;
+  }
+
+  goToDetails(id: string) {
+    this.moviesFacade.getMovieById(id);
   }
 }

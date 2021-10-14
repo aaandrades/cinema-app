@@ -18,12 +18,12 @@ export class DashboardComponent implements OnInit {
   constructor(private moviesFacade: MoviesFacade) {}
 
   async ngOnInit() {
-    // const moviesInfo = await this.moviesFacade.movies$
-    //   .pipe(take(1))
-    //   .toPromise();
-    // this.movies = moviesInfo;
-    // this.currentMovies = this.getIntervalMovies(this.movies, -1, 20);
-    this.currentMovies = this.getIntervalMovies(moviesMock, -1, 20);
+    const moviesInfo = await this.moviesFacade.movies$
+      .pipe(take(1))
+      .toPromise();
+    this.movies = moviesInfo;
+    this.currentMovies = this.getIntervalMovies(this.movies, -1, 20);
+    // this.currentMovies = this.getIntervalMovies(moviesMock, -1, 20);
   }
 
   filterMovies() {
