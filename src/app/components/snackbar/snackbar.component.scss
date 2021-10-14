@@ -1,0 +1,21 @@
+@import "../../../colors.scss";
+
+.snackbar-container {
+  width: 30%;
+  z-index: 20;
+  right: 30px;
+  bottom: 30px;
+  position: fixed;
+  font-size: 1.1rem;
+  color: $white-100;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 20px;
+  background-color: $success;
+  -webkit-box-shadow: 5px 5px 13px -4px rgba(0, 0, 0, 0.67);
+  box-shadow: 5px 5px 13px -4px rgba(0, 0, 0, 0.67);
+  @media only screen and (max-width: 650px) {
+    right: 5%;
+    width: 80%;
+  }
+}

@@ -55,6 +55,15 @@ export const updateInformationErrorAction = createAction(
   props<{ message: AlertsMessagesTypeInterface }>()
 );
 
+// Logout
+export const logoutAction = createAction(
+  ngrxType('[login/UI] Logout user action')
+);
+
+export const logoutSuccessAction = createAction(
+  ngrxType('[login/UI] Logout user success action')
+);
+
 EnableLoadingObserverActionsTypes.push(loginUserAction);
 EnableLoadingObserverActionsTypes.push(registerUserAction);
 EnableLoadingObserverActionsTypes.push(updateInformationAction);

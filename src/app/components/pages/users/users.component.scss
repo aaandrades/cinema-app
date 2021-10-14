@@ -78,3 +78,14 @@
   color: $error;
   font-weight: bold;
 }
+
+.logout-button {
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 5px;
+  transition: margin 200ms ease;
+  &:hover {
+    margin-left: 6px;
+    transition: margin 200ms ease;
+  }
+}

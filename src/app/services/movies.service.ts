@@ -5,7 +5,7 @@ import {
   MassiveResultsInterface,
 } from '../store/model/movies.state';
 import { Observable, of } from 'rxjs';
-import { searchMock, premiersMock, comingSoonMock } from '../mocks/movies.mock';
+import { searchMock, premiersMock, comingSoonMock, moviesMock, moviesResponse } from '../mocks/movies.mock';
 import { PremiersInterface } from '../store/model/movies.state';
 
 @Injectable({
@@ -18,6 +18,7 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMovies(tokenApi: string): Observable<ResultsInterface> {
+    // return of(moviesResponse);
     return this.http.get<ResultsInterface>(
       this.BASE_URL + 'Top250Movies/' + tokenApi
     );

@@ -25,7 +25,7 @@ export interface MovieInterface {
 }
 
 export interface ResultsInterface {
-  erroMesage: string;
+  errorMessage: string;
   items: MovieInterface[];
 }
 

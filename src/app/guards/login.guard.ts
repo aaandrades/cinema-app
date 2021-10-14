@@ -13,7 +13,7 @@ import { UserFacade } from '../store/facade/user.facade';
   providedIn: 'root',
 })
 export class LoginGuard implements CanActivate {
-  constructor(private userFacade: UserFacade, private router: Router) { }
+  constructor(private userFacade: UserFacade, private router: Router) {}
 
   async canActivate(
     next: ActivatedRouteSnapshot,

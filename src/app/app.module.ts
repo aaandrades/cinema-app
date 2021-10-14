@@ -30,6 +30,7 @@ import { DetailsComponent } from './components/pages/details/details.component';
 import { SwiperModule } from 'swiper/angular';
 import { PremiersComponent } from './components/pages/premiers/premiers.component';
 import { UsersComponent } from './components/pages/users/users.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
 
 
 export const userFeatureName = 'userState';
@@ -48,6 +49,7 @@ export const moviesFeatureName = 'moviesState';
     DetailsComponent,
     PremiersComponent,
     UsersComponent,
+    SnackbarComponent,
   ],
   imports: [
     FormsModule,

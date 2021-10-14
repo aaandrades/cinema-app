@@ -60,4 +60,8 @@ export class UsersComponent implements OnInit {
         };
     this.userFacade.updateInformation(buildRq, this.id);
   }
+
+  logout() {
+    this.userFacade.logout();
+  }
 }

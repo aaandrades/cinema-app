@@ -5,6 +5,7 @@ import {
   loginUserAction,
   registerUserAction,
   publicUserAccessAction,
+  logoutAction,
 } from '../actions/user.actions';
 import { Injectable } from '@angular/core';
 import { userSelector } from '../selector/user.selector';
@@ -35,5 +36,9 @@ export class UserFacade {
 
   public setPublicUser() {
     this.store.dispatch(publicUserAccessAction());
+  }
+
+  public logout() {
+    this.store.dispatch(logoutAction())
   }
 }

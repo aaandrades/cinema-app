@@ -12,15 +12,11 @@ import {
   catchError,
   concatMap,
   withLatestFrom,
-  mergeMap,
 } from 'rxjs/operators';
 import * as movies from '../actions/movies.actions';
 import { userSelector } from '../selector/user.selector';
 import { AlertsMessagesType } from '../../enums/AlertMessageTypes';
-import {
-  fetchMovieByExpression,
-  fetchNewMoviesSuccessAction,
-} from '../actions/movies.actions';
+import { SnackbarProvider } from '../../components/snackbar/snackbar-provider/snackbar-provider.service';
 
 @Injectable()
 export class MoviesEffects {
@@ -28,7 +24,8 @@ export class MoviesEffects {
     private actions$: Actions,
     private movieService: MoviesService,
     private router: Router,
-    private store: Store
+    private store: Store,
+    private snackbarProvider: SnackbarProvider
   ) {}
 
   fetchMoviesEffect$: Observable<Action> = createEffect(() =>
@@ -192,7 +189,8 @@ export class MoviesEffects {
     () =>
       this.actions$.pipe(
         ofType(movies.fetchMoviesSuccessAction),
-        tap(() => this.router.navigate(['/dashboard']))
+        tap(() => this.router.navigate(['/dashboard'])),
+        tap(() => this.snackbarProvider.showSnackbar())
       ),
     { dispatch: false }
   );

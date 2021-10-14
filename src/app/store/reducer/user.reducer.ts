@@ -18,18 +18,22 @@ const multipleUserReducer = createReducer(
     id: response.user._id,
     loading: false,
   })),
-  on(loginActions.updateInformationSuccessAction, (state: UserState, { response }) => ({
-    ...state,
-    name: response.user.name,
-    email: response.user.email,
-    role: response.user.role,
-    id: response.user._id,
-    loading: false,
-  })),
+  on(
+    loginActions.updateInformationSuccessAction,
+    (state: UserState, { response }) => ({
+      ...state,
+      name: response.user.name,
+      email: response.user.email,
+      role: response.user.role,
+      id: response.user._id,
+      loading: false,
+    })
+  ),
   on(loginActions.publicUserAccessAction, (state: UserState) => ({
     ...state,
     publicUser: true,
-  }))
+  })),
+  on(loginActions.logoutAction, (state: UserState) => initialUserState)
 );
 
 export const userReducer = (state: UserState, action: Action): UserState => {
