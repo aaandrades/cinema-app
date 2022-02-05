@@ -70,9 +70,6 @@ export class MoviesEffects {
       switchMap(([action, userState]) =>
         this.movieService.getMovieById(userState.token_api, action.id).pipe(
           map((response: any) => {
-            if (response.errorMessage !== '') {
-              throw new Error(response.errorMessage);
-            }
             return movies.fetchMovieByIdSuccessAction({
               currentMovie: response,
             });

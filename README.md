@@ -7,6 +7,8 @@
 Movie-app it's an application where you can find all the information about
 movies throught the IMDB service. You can register or login and save your preferences. The backend its created in Nodejs (Express with Typescript)
 
+<img src="documentation/detail.png"  alt="Detail screen" width="600" height="400" style=border-radius:6px>
+
 ### :sparkles: Features
 - Login
 - Register
@@ -35,6 +37,8 @@ movies throught the IMDB service. You can register or login and save your prefer
 ### :hammer: Demostration
 - Link: https://cinema-application.netlify.app/login
 - Video: https://youtu.be/4HcVUCw4Q-w
+
+<img src="documentation/login.png"  alt="Detail screen" width="600" height="400" style=border-radius:6px>
 
 ### :bulb: Run the App
 To run locally, clone the repo, execute ```npm install``` and then ```ng serve --open```.
