@@ -1,25 +1,76 @@
 <div class="container">
-    <div class="container__register-container animate__animated animate__bounceInDown">
-        <div class="container__register-container__header">
-            <img src="../../../assets/back-button.svg" alt="Back" routerLink="/login" class="container__register-container__header__img-button" height="27px">
-            <h1 class="container__register-container__title">Register</h1>
+  <div
+    class="container__register-container animate__animated animate__bounceInDown"
+  >
+    <h1 class="title">Register</h1>
+    <form class="form-body" [formGroup]="registerForm" novalidate>
+      <div class="form-body__container-selector">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          placeholder="John Doe"
+          title="Name"
+          class="form-body__input"
+          type="text"
+          formControlName="name"
+          autocomplete="off"
+        />
+      </div>
+      <div class="form-body__container-selector">
+        <label>Email</label>
+        <input
+          title="Email"
+          placeholder="Johndoe@email.com"
+          class="form-body__input"
+          type="email"
+          formControlName="email"
+          autocomplete="off"
+        />
+      </div>
+      <div class="form-body__container-password">
+        <div class="input-width">
+          <label>Password</label>
+          <input
+            title="Password"
+            class="form-body__input"
+            type="password"
+            formControlName="password"
+            autocomplete="off"
+          />
         </div>
-        <form class="container__register-container__body" [formGroup]="registerForm" novalidate>
-            <div class="container__register-container__body__container-selector">
-                <label>Name</label>
-                <input class="container__register-container__body__input" type="text" formControlName="name" autocomplete="off" />
-            </div>
-            <div class="container__register-container__body__container-selector">
-                <label>Email</label>
-                <input class="container__register-container__body__input" type="email" formControlName="email" autocomplete="off" />
-            </div>
-            <div class="container__register-container__body__container-selector">
-                <label>Password</label>
-                <input class="container__register-container__body__input" type="password" formControlName="password" autocomplete="off" />
-            </div>
-            <button (click)="onSubmit()" type="submit" [disabled]="!registerForm.valid" class="container__register-container__body__button">
-                Register
-              </button>
-        </form>
-    </div>
+        <div class="input-width">
+          <label>Confirm password</label>
+          <input
+            title="Password"
+            class="form-body__input"
+            type="password"
+            formControlName="confirmPassword"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+      <div>
+        <button
+          routerLink="/login"
+          type="button"
+          title="Return"
+          class="form-body__button"
+        >
+          Cancel
+        </button>
+        <button
+          (click)="onSubmit()"
+          type="submit"
+          [disabled]="
+            !registerForm.valid ||
+            registerForm.get('password')?.value !==
+              registerForm.get('confirmPassword')?.value
+          "
+          class="form-body__button"
+        >
+          Register
+        </button>
+      </div>
+    </form>
+  </div>
 </div>

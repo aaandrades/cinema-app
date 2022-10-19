@@ -1,32 +1,26 @@
 <div class="container">
   <div class="container__card">
-    <div class="container__card__left-side">
+    <div class="container__card--left">
       <img
         src="../../../assets/shop.svg"
         alt="shop-icon"
-        class="
-          animate__animated animate__bounce
-          container__card__left-side__icon
-        "
+        class="animate__animated animate__bounce icon"
       />
-      <div class="container__card__left-side__header">
+      <div class="header">
         <h1>Online Cinema</h1>
-        <h3>
-          A simple app where you can handle the state through Redux (Ngrx).
-        </h3>
+        <p>
+          Search for movies, look up their scores, see what movies are coming up
+          and much more!
+        </p>
       </div>
     </div>
-    <form class="container__card__rightside" [formGroup]="loginForm" novalidate>
-      <h1 class="container__card__rightside__title">Welcome!</h1>
-
-      <span *ngIf="!validUser" class="animate__animated animate__jello"
-        >Insert a valid username</span
-      >
+    <form class="container__card--right" [formGroup]="loginForm" novalidate>
+      <h2 class="title">Discover it by yourself!</h2>
+      <span class="form-error" *ngIf="!validUser">Insert a valid username</span>
       <input
         [ngClass]="{
-          container__card__rightside__input: validUser,
-          'container__card__rightside__input--error animate__animated animate__jello':
-            !validUser
+          input: validUser,
+          'input--error': !validUser
         }"
         type="email"
         value="{}"
@@ -35,38 +29,29 @@
         autocomplete="off"
       />
 
-      <span *ngIf="!validPassword" class="animate__animated animate__jello"
-        >Insert a valid password</span
-      >
+      <span class="form-error" *ngIf="!validPassword">
+        Insert a valid password
+      </span>
       <input
         [ngClass]="{
-          container__card__rightside__input: validPassword,
-          'container__card__rightside__input--error animate__animated animate__jello':
-            !validPassword
+          input: validPassword,
+          'input--error': !validPassword
         }"
         type="password"
         formControlName="password"
         placeholder="Password"
       />
-      <button
-        (click)="fastSubmit()"
-        type="submit"
-        class="container__card__rightside__button"
-      >
+      <button (click)="fastSubmit()" type="submit" class="button">
         Fast login (Just 1 click)
       </button>
       <p>Or</p>
-      <button
-        (click)="onSubmit()"
-        type="submit"
-        class="container__card__rightside__button"
-      >
-        Login
-      </button>
-      <p>Or</p>
-      <span class="helper-text">
-        New user? <a routerLink="/register"><b>Sign up here</b></a>
-      </span>
+      <button (click)="onSubmit()" type="submit" class="button">Login</button>
+      <p class="helper-text">
+        New user?
+        <a class="helper-text" rel="noopener" routerLink="/register">
+          <strong>Sign up here</strong>
+        </a>
+      </p>
     </form>
   </div>
 </div>

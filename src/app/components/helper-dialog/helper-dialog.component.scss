@@ -1,94 +1,98 @@
 @import "../../../colors.scss";
 .container {
-    position: fixed;
-    right: 2%;
-    bottom: 2%;
-    border-radius: 100%;
-    padding: 20px;
-    border: none;
-    cursor: pointer;
-    background-image: url("../../../assets/info.svg");
-    &:hover {
-        background-color: $background-primary-color;
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  border-radius: 100%;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+  background-image: url("../../../assets/info.svg");
+  transition: all 100ms ease-in;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 100ms ease-in;
+  }
+  &__button-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &__button {
+      width: 46%;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      padding: 15px 20px;
+      color: $white-100;
+      cursor: pointer;
+      background-color: $primary-color;
+      transition: font-size 100ms ease-out, background-color 200ms ease-out;
+
+      &:hover {
+        background-color: $primary-color-hover;
+        transition: all 200ms ease-in;
+      }
     }
-    &__button-container {
-        margin-top: 50px;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        &__button {
-            width: 200px;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 10px;
-            background: $primary-color;
-            padding: 15px 20px;
-            color: $white-100;
-            cursor: pointer;
-            &:hover {
-                background-color: $background-primary-color;
-            }
-        }
-        &__button--action {
-            width: 200px;
-            font-size: 1.1rem;
-            padding: 15px 20px;
-            color: $primary-color;
-            cursor: pointer;
-            border:none;
-            background-color: transparent;
-            @media only screen and (max-width: 650px) {
-                margin-top: 10px;
-            }
-        }
+    &__button--action {
+      width: 46%;
+      font-size: 1.1rem;
+      padding: 15px 20px;
+      color: $primary-color;
+      cursor: pointer;
+      border: 1px solid;
+      border-radius: 6px;
+      background-color: transparent;
     }
+  }
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 img {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 label {
-    font-size: 1.5rem;
-    color: $primary-color;
-    font-weight: bold;
+  font-size: 1.5rem;
+  color: $primary-color;
+  font-weight: bold;
 }
 
 p {
-    padding-top: 20px;
-    line-height: 1.5rem;
+  padding-top: 20px;
+  line-height: 1.5rem;
 }
 
 .button {
-    border: none;
+  border: none;
 }
 
 .disclaimer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    backdrop-filter: blur(30px);
-    &__dialog {
-        width: 500px;
-        padding: 30px;
-        border-radius: 20px;
-        background-color: white;
-        --animate-duration: 0.3s;
-        -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.51);
-        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.51);
-        @media only screen and (max-width: 650px) {
-            width: 70%;
-        }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  &__dialog {
+    width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+    --animate-duration: 0.3s;
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.51);
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.51);
+    @media only screen and (max-width: 650px) {
+      width: 70%;
     }
+  }
 }
