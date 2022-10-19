@@ -1,5 +1,6 @@
 @import "../../../colors.scss";
 @import "../../../mixins.scss";
+
 .container {
   top: 0;
   right: 0;
@@ -8,10 +9,14 @@
   position: fixed;
   display: flex;
   align-items: center;
-  color: $primary-color;
   justify-content: center;
-  background-size: 500px;
-  background-image: url("../../../assets/pattern-blue.png");
+  background-image: linear-gradient(
+      to bottom,
+      rgba(245, 246, 252, 0.2),
+      rgba(117, 19, 93, 0.8)
+    ),
+    url("../../../assets/wallpaper-movies.jpg");
+  background-size: 100rem;
 
   @media only screen and (max-width: 650px) {
     align-items: flex-start;
@@ -19,30 +24,34 @@
 
   &__card {
     width: 50%;
+    max-width: 800px;
     display: flex;
     padding: 60px;
     border-radius: 20px;
-    justify-content: space-between;
-    background-color: $secondary-color;
-    box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.19);
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: $secondary-color;
     -webkit-box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.19);
-    
+    box-shadow: 4px 4px 9px 2px rgba(0, 0, 0, 0.19);
+
     @media only screen and (max-width: 1070px) {
       width: 80%;
       padding: 30px;
     }
-    
+
     @media only screen and (max-width: 650px) {
       flex-wrap: wrap;
       margin-top: 2rem;
-      padding: 20px 50;
     }
 
-    &__left-side {
+    &--left {
       width: 25rem;
       text-align: center;
       @include vertical-container(false);
-      &__header {
+
+      .header {
         font-size: 1rem;
         @include vertical-container(false);
         @media only screen and (max-width: 650px) {
@@ -51,30 +60,35 @@
         @media only screen and (max-width: 1000px) {
           font-size: 0.8rem;
         }
-        h3 {
-          max-width: 50%;
+        h1 {
+          color: #f765d3;
+          margin: 20px 0px -10px 0px;
         }
-      }
-
-      &__icon {
-        width: 50%;
-        @media only screen and (max-width: 650px) {
-          width: 100px;
+        p {
+          font-size: 20px;
+          max-width: 60%;
         }
       }
     }
 
-    &__rightside {
+    .icon {
+      width: 50%;
+      @media only screen and (max-width: 650px) {
+        width: 100px;
+      }
+    }
+
+    &--right {
       width: 23rem;
       display: flex;
       align-items: center;
       flex-direction: column;
-      &__title {
-        font-size: 2.2rem;
+      .title {
         font-weight: bold;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
       }
-      &__input {
+
+      .input {
         width: 90%;
         padding: 15px;
         font-size: 15px;
@@ -82,9 +96,15 @@
         border-radius: 8px;
         outline: none !important;
         border: 1px solid silver;
+        &:focus {
+          -webkit-box-shadow: 0px 0px 0px 2px rgba(75, 117, 255, 1);
+          -moz-box-shadow: 0px 0px 0px 2px rgba(75, 117, 255, 1);
+          box-shadow: 0px 0px 0px 2px rgba(75, 117, 255, 1);
+        }
       }
-      &__input--error {
-        width: 21rem;
+
+      .input--error {
+        width: 90%;
         background: $error;
         color: $white-100;
         padding: 15px;
@@ -103,7 +123,8 @@
           color: $white-100;
         }
       }
-      &__button {
+
+      .button {
         border: none;
         width: 100%;
         height: 45px;
@@ -111,29 +132,21 @@
         color: $white-100;
         border-radius: 10px;
         background-color: $primary-color;
-        transform: scaleY(1);
-        transition: transform 500ms ease;
+        transition: font-size 100ms ease-out, background-color 200ms ease-out;
         &:hover {
-          transform: scaleY(1.1);
-          transition: transform 200ms ease;
+          font-size: 14px;
+          background-color: $primary-color-hover;
+          transition: all 200ms ease-in;
         }
       }
     }
   }
 }
 
-span {
+.form-error {
   color: $error;
 }
 
-a {
-  text-decoration: none;
-}
-
-h1 {
-  margin: 20px 0px -10px 0px;
-}
-
 .helper-text {
-  color: $primary-color
+  color: $secondary-color;
 }

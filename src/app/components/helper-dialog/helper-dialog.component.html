@@ -1,22 +1,42 @@
-<button class="container" (click)="showDialogClick()"></button>
+<button
+  type="button"
+  title="Show help"
+  class="container"
+  (click)="showDialogClick()"
+></button>
 <ng-container *ngIf="showDialog">
-    <div class="disclaimer">
-        <div [ngClass]="getItemClass">
-            <div class="header">
-                <label>A little help</label>
-                <img src="../../../assets/cancel.png" height="29px" (click)="showDialogClick()" />
-            </div>
-            <p>
-                You can register and get a new user and password, or you can use a default credentials, you know, facilities :)
-            </p>
-            <div class="container__button-container">
-                <button (click)="returnDefaultValues()" class="container__button-container__button">
+  <div class="disclaimer">
+    <div [ngClass]="getItemClass">
+      <div class="header">
+        <label>A little help</label>
+        <img
+          src="../../../assets/cancel.png"
+          height="29px"
+          alt="close"
+          (click)="showDialogClick()"
+        />
+      </div>
+      <p>
+        You can register and get a new user and password, or you can use a
+        default credentials, you know, facilities :)
+      </p>
+      <div class="container__button-container">
+        <button
+          type="button"
+          (click)="returnDefaultValues()"
+          class="container__button-container__button"
+          title="Close"
+        >
           Use credentials
         </button>
-                <button routerLink="/register" class="container__button-container__button--action">
+        <button
+          type="button"
+          routerLink="/register"
+          class="container__button-container__button--action"
+        >
           Register
         </button>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 </ng-container>
