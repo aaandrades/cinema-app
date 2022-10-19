@@ -7,7 +7,7 @@ import { of } from 'rxjs';
   providedIn: 'root',
 })
 export class LoginService {
-  REST_API = 'https://restapi-in-nodejs.herokuapp.com';
+  REST_API = 'https://rest-api-node-h8c0.onrender.com';
 
   constructor(private http: HttpClient) {}
 
