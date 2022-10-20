@@ -1,7 +1,11 @@
 <div *ngIf="showLoader" class="loader-container">
-    <div class="loader-container__modal animate__animated animate__zoomIn disclaimer__dialog">
-        <div>
-            <div class="loader"></div>
-            <p>Loading information</p>
-        </div>
-    </div>
+  <div
+    class="loader-container__modal animate__animated animate__zoomIn disclaimer__dialog"
+  >
+    <div class="loader"></div>
+    <p>Loading information</p>
+    <span *ngIf="this.message" class="disclaimer-message">
+      {{ this.message }}
+    </span>
+  </div>
+</div>

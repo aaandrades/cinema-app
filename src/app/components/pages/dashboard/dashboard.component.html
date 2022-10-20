@@ -9,14 +9,14 @@
   <div class="navbar-space"></div>
   <div class="container-movies">
     <div class="container__header">
-      <div class="container__header__box">
-        <div class="container__header__title">
+      <div class="container__header--box">
+        <div class="container__header--title">
           <h2>Movies to watch before die (According IMDB)</h2>
           <p>Press enter to filter movies and click to go for details.</p>
         </div>
         <div class="search-container">
           <input
-            class="container__header__input input-container"
+            class="container__header--input input-container"
             placeholder="Ej: Fight club"
             [(ngModel)]="currentSearch"
             (keyup.enter)="filterMovies()"
@@ -28,10 +28,7 @@
           >
             Search
           </button>
-          <button
-            class="button-container"
-            (click)="defaultValues()"
-          >
+          <button class="button-container" (click)="defaultValues()">
             Clear
           </button>
         </div>
@@ -40,25 +37,20 @@
     <div class="container__movies">
       <ng-container *ngIf="currentMovies.length > 0; else noResults">
         <ng-container *ngFor="let item of currentMovies">
-          <div
-            class="container__movies__item animate__animated animate__flipInY"
-            (click)="goToDetail(item.id)"
-          >
+          <div class="container__item" (click)="goToDetail(item.id)">
             <img
-              class="container__movies__item__img"
+              class="container__item--img"
               alt="{{ item.title }}"
               src="{{ item.image }}"
             />
-            <div class="container__movies__item__body">
-              <label class="container__movies__item__body__title">
+            <span class="container__item--year"> {{ item.year }} </span>
+            <div class="container__item--body">
+              <span class="container__item--title">
                 {{ item.title }}
-              </label>
-              <label class="container__movies__item__description">
-                Year: {{ item.year }}
-              </label>
-              <label class="container__movies__item__description">
-                IMDB Score: {{ item.imDbRating }}
-              </label>
+              </span>
+              <span class="container__item--description">
+                {{ item.imDbRating }} ⭐
+              </span>
             </div>
           </div>
         </ng-container>
@@ -66,8 +58,8 @@
     </div>
   </div>
   <ng-template #noResults>
-    <div class="container__movies__no-results">
-      No results for {{ currentSearch }}, please try again.
+    <div class="container__movies--no-results">
+      No results for {{ currentSearch }}, please try with another search.
     </div>
   </ng-template>
 </div>
