@@ -1,9 +1,8 @@
-<app-navbar [current]="'user'"></app-navbar>
 <div class="container">
-  <span></span>
+  <app-navbar [current]="'user'"></app-navbar>
   <div class="users-container animate__animated animate__fadeIn">
-    <h1>User information</h1>
     <div class="users-container__card">
+      <h3>User information</h3>
       <form [formGroup]="updateForm" novalidate>
         <label for="name">Name</label>
         <input
@@ -35,23 +34,27 @@
             formControlName="confirmationPassword"
           />
         </ng-container>
-        <span class="error-bold" *ngIf="publicUser"
-          >You logged in with public access, to edit all information please
-          create an account.</span
-        >
+        <p class="error-bold" *ngIf="publicUser">
+          You logged in with public access, to edit all information please
+          create an account.
+        </p>
         <div class="button-containers">
           <button
             type="button"
-            class="users-container__card__button"
+            class="action__button action__button--primary"
             (click)="updateData()"
           >
             Update information
           </button>
+          <button
+            type="button"
+            class="action__button action__button--secondary"
+            (click)="logout()"
+          >
+            Logout
+          </button>
         </div>
-        <div class="logout-button">
-          <a class="logout-button" href="login">Logout</a>
-        </div>
-        <!-- <p>Sorry, here you can't find more customization :(</p> -->
+        <!-- Sorry, here you can't find more customization :( -->
       </form>
     </div>
   </div>

@@ -1,3 +1,4 @@
+// Public user
 export const userMock = {
   ok: true,
   user: {
