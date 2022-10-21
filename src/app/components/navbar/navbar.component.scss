@@ -45,14 +45,14 @@
   .selected {
     margin-left: -5rem;
     padding-left: 5rem;
-    background: $blue-250;
+    background: #01306c;
   }
 }
 
 .navbar {
   z-index: 1;
   position: fixed;
-  background: $blue-300;
+  background: #003d8c;
   transition: width 200ms ease;
 }
 

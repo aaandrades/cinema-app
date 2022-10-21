@@ -9,30 +9,16 @@
   <div class="navbar-space"></div>
   <div class="container-movies">
     <div class="container__header">
-      <div class="container__header--box">
-        <div class="container__header--title">
-          <h2>Movies to watch before die (According IMDB)</h2>
-          <p>Press enter to filter movies and click to go for details.</p>
-        </div>
-        <div class="search-container">
-          <input
-            class="container__header--input input-container"
-            placeholder="Ej: Fight club"
-            [(ngModel)]="currentSearch"
-            (keyup.enter)="filterMovies()"
-          />
-          <button
-            class="button-container search-button"
-            *ngIf="currentSearch !== ''"
-            (click)="filterMovies()"
-          >
-            Search
-          </button>
-          <button class="button-container" (click)="defaultValues()">
-            Clear
-          </button>
-        </div>
-      </div>
+      <h2>Look up for some movie</h2>
+      <input
+        class="container__header--input input-container"
+        placeholder="Ej: Fight club"
+        [(ngModel)]="currentSearch"
+        (ngModelChange)="filterMovies()"
+      />
+      <p class="container__header--description">
+        The list contains all the best movies according to IMDB
+      </p>
     </div>
     <div class="container__movies">
       <ng-container *ngIf="currentMovies.length > 0; else noResults">
