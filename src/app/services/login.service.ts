@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { credentials, registerCredentials } from '../models/interface';
 import { of } from 'rxjs';
+import { userMock } from '../mocks/login.mock';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   loginService(credentials: credentials) {
+    return of(userMock);
     return this.http.post(this.REST_API + '/login', credentials);
   }
 
@@ -21,7 +23,7 @@ export class LoginService {
 
   updateInformationService(request: any, id: string, token: string) {
     return this.http.put(this.REST_API + '/users/' + id, request, {
-      headers: { Authorization: token, },
+      headers: { Authorization: token },
     });
   }
 }

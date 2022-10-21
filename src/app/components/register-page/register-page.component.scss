@@ -14,7 +14,7 @@
       rgba(117, 19, 93, 0.5)
     ),
     url("../../../assets/wallpaper-movies-register.jpg");
-  background-size: 100rem;
+  background-size: cover;
 
   @media only screen and (max-width: 650px) {
     align-items: flex-start;

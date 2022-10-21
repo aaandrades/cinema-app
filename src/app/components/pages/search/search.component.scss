@@ -4,42 +4,43 @@
 .container {
   position: fixed;
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
-  bottom: 0;
-  display: grid;
   overflow-y: auto;
-  background-color: $gray-300;
-  grid-template-columns: 5% 95%;
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: 0% 100%;
+
+  @media only screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 5rem auto;
   }
-}
-
-.showing-results {
-  margin-top: 50px;
-}
-
-.initial-search {
-  margin-top: -50px;
-  animation-duration: 500ms;
 }
 
 .search-container {
   @include vertical-container(false);
   height: 100%;
-  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-image: linear-gradient(to right, #000000d1, rgb(0 0 0 / 56%)),
+    url("../../../../assets/wallpaper-movies-register.jpg");
+  background-repeat: repeat;
+
   &__box {
     @include vertical-container(false);
-    width: 60%;
+    animation-duration: 500ms;
+    width: 80%;
+    min-width: 500px;
+    max-width: 900px;
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 15px;
     color: $secondary-color;
-    background-color: $tertiary-color;
-    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
-    -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+    background-color: rgb($primary-color, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
     @media only screen and (max-width: 600px) {
-      width: 80%;
+      width: 100%;
+      min-width: auto;
+      text-align: center;
     }
   }
   &__input {
@@ -48,33 +49,42 @@
     margin: 20px 0px;
     flex-wrap: wrap;
     .input-search {
+      font-size: 1rem;
       width: 50%;
       outline: none;
+      border: none;
       padding: 15px 15px 15px 40px;
       border-radius: 8px;
-      font-size: 1rem;
       margin-right: 10px;
-      border: 1px solid silver;
+      box-sizing: border-box;
       background-size: 1rem;
       background-position: 1rem;
       background-repeat: no-repeat;
       background-image: url("../../../../assets/search-input.svg");
       @media only screen and (max-width: 600px) {
-        width: 90%;
+        width: 100%;
+        margin-right: 0px;
       }
     }
     .button-search {
-      border: none;
       cursor: pointer;
-      height: 47px;
+      border: none;
+      height: 50px;
       font-size: 1rem;
+      font-weight: bold;
       border-radius: 8px;
       padding: 10px 20px;
       color: $tertiary-color;
       background-color: $secondary-color;
+      transition: background-color 200ms ease-in;
+
+      &:disabled {
+        background-color: gray;
+        color: darkgray;
+      }
       &:hover {
-        -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
-        box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+        background-color: #e7e7e7;
+        transition: background-color 200ms ease-in;
       }
       @media only screen and (max-width: 600px) {
         height: auto;
@@ -87,48 +97,66 @@
   }
 }
 
+.no-height {
+  height: auto;
+}
+
 .results-container {
   width: 80%;
-  display: grid;
-  background-color: $white-100;
-  margin-top: 40px;
-  margin-bottom: 70px;
-  padding: 30px;
-  border-radius: 30px;
-  grid-template-columns: 25% 25% 25% 25%;
-  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
-  -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.27);
+  max-width: 900px;
+  min-width: 500px;
+  margin: 40px 0 70px 0;
+  padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  background-color: #28282863;
+  box-sizing: border-box;
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
   @media only screen and (max-width: 600px) {
-    grid-template-columns: 50% 50%;
-  }
-  @media only screen and (max-width: 320px) {
-    grid-template-columns: 100%;
+    width: 100%;
+    min-width: auto;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
   &__card {
-    @include vertical-container(false);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
     cursor: pointer;
     transform: scale(1);
-    transition: transform 200ms ease;
+    transition: transform 200ms ease-out;
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 20px;
+      width: auto;
+    }
     &:hover {
-      transform: scale(1.05);
-      transition: transform 200ms ease;
+      transform: scale(1.02);
+      transition: transform 200ms ease-in;
     }
     &__image {
-      max-width: 80%;
+      width: 100%;
+      max-height: 300px;
       border-radius: 10px;
       @media only screen and (max-width: 600px) {
-        width: 150px;
-        max-height: 200px;
+        max-width: 230px;
       }
     }
     &__label {
       margin-top: 10px;
-      color: $tertiary-color;
+      color: $white-100;
       text-align: center;
       font-weight: bold;
     }
   }
+}
+
+.no-results {
+  color: $white-100;
 }

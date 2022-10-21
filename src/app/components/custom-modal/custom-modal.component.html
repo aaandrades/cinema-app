@@ -3,22 +3,24 @@
     <div class="header-modal">
       <span [ngSwitch]="alertInfo.type">
         <img
+          alt="success, i think"
           *ngSwitchCase="'success'"
           class="modal-image"
           src="../../../assets/success.png"
         />
         <img
+          alt="error"
           *ngSwitchCase="'error'"
           class="modal-image"
           src="../../../assets/error.png"
         />
         <img
+          alt="error"
           *ngSwitchDefault
           class="modal-image"
           src="../../../assets/error.png"
         />
       </span>
-      <img />
       <span
         *ngIf="alertInfo.title !== ''"
         class="modal-container__modal__title"
@@ -29,7 +31,11 @@
     <div class="modal-container__modal__description">
       <span>{{ alertInfo.message }}</span>
     </div>
-    <button class="modal-container__button" (click)="disableModal()">
+    <button
+      type="button"
+      class="modal-container__button"
+      (click)="disableModal()"
+    >
       Understood
     </button>
   </div>

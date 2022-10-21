@@ -6335,27 +6335,6 @@ export const searchMock = {
   expression: 'CIUDAD',
   results: [
     {
-      id: 'tt6992250',
-      resultType: 'Title',
-      image: 'https://imdb-api.com/images/original/nopicture.jpg',
-      title: 'Ciudad',
-      description: '(in development) (TV Series)',
-    },
-    {
-      id: 'tt11950990',
-      resultType: 'Title',
-      image: 'https://imdb-api.com/images/original/nopicture.jpg',
-      title: 'Ciudad',
-      description: '(2018) (Short)',
-    },
-    {
-      id: 'tt2458278',
-      resultType: 'Title',
-      image: 'https://imdb-api.com/images/original/nopicture.jpg',
-      title: 'Ciudad',
-      description: '(2010) (Short)',
-    },
-    {
       id: 'tt0317248',
       resultType: 'Title',
       image:

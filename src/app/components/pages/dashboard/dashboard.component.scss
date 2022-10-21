@@ -20,12 +20,14 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0), #ffffff00),
       linear-gradient(to top, rgba(0, 0, 0), #ffffff00),
       url("../../../../assets/main-wallpaper.jpg");
-    background-size: 50%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 
     @media only screen and(max-width: 600px) {
-      background-size: 70%;
+      background-size: cover;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -98,17 +100,18 @@
       top: 5px;
       -webkit-backdrop-filter: blur(1px);
       backdrop-filter: blur(1px);
+      @media only screen and (max-width: 600px) {
+        background: #007bff;
+      }
     }
 
     &--img {
-      width: -webkit-fill-available;
-      height: 320px;
+      width: 100%;
       max-width: 300px;
       border-radius: 6px;
       margin-bottom: 10px;
       @media only screen and (max-width: 600px) {
-        max-width: none;
-        height: auto;
+        max-width: -webkit-fill-available;
       }
     }
     &--body {
