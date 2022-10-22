@@ -1,8 +1,15 @@
-<div class="movie-container">
-  <div class="container__register-container__header">
-    <img src="../../../assets/back-button-inside.svg" alt="Back" (click)="goBack()" class="back-row" height="27px">
-  </div>
-  <div class="movie-container__body">
+<section class="movie-container">
+  <article class="container__register-container__header">
+    <img
+      src="../../../assets/back-button-inside.svg"
+      alt="Back"
+      (click)="goBack()"
+      class="back-row"
+      height="27px"
+      title="Return"
+    />
+  </article>
+  <article class="movie-container__body">
     <img
       class="movie-container__body__image"
       alt="{{ currentMovie.title }}"
@@ -10,16 +17,40 @@
     />
     <div class="movie-container__body__description">
       <h1 class="movie-container__body__title">{{ currentMovie.title }}</h1>
-      <p class="movie-container__body__summary">{{ viewMore ? currentMovie.plot : formatResume(currentMovie.plot) }}</p>
-      <div [ngStyle]="{'width': '100%'}">
-        <button class="button-container" (click)="changeView()">{{ viewMore ? 'View less' : 'View more'}}</button>
+      <p class="movie-container__body__summary">
+        {{ viewMore ? currentMovie.plot : formatResume(currentMovie.plot) }}
+      </p>
+      <div [ngStyle]="{ width: '100%' }">
+        <button type="button" class="button-container" (click)="changeView()">
+          {{ viewMore ? "View less" : "View more" }}
+        </button>
       </div>
       <div class="movie-container__body__about">
         <div class="about-texts">
-          <span class="about-texts__labels">Year: <span style="font-weight: 400;">{{ currentMovie.year }} </span></span>
-          <span class="about-texts__labels">Directors: <span style="font-weight: 400;">{{ currentMovie.directors }} </span></span>
-          <span class="about-texts__labels">Generes: <span style="font-weight: 400;">{{ currentMovie.genres }} </span></span>
-          <span class="about-texts__labels">Imdb Rate: <span style="font-weight: 400;">{{ currentMovie.imDbRating }} </span></span>
+          <span class="about-texts__labels">
+            Year:
+            <span [ngStyle]="{ 'font-weight': '400' }"
+              >{{ currentMovie.year }}
+            </span>
+          </span>
+          <span class="about-texts__labels">
+            Directors:
+            <span [ngStyle]="{ 'font-weight': '400' }">
+              {{ currentMovie.directors }}
+            </span>
+          </span>
+          <span class="about-texts__labels">
+            Generes:
+            <span [ngStyle]="{ 'font-weight': '400' }"
+              >{{ currentMovie.genres }}
+            </span>
+          </span>
+          <span class="about-texts__labels">
+            Imdb Rate:
+            <span [ngStyle]="{ 'font-weight': '400' }"
+              >{{ currentMovie.imDbRating }}
+            </span>
+          </span>
         </div>
       </div>
       <div class="movie-container__body__awards">
@@ -39,14 +70,14 @@
                 alt="{{ actor.name }}"
                 src="{{ actor.image }}"
               />
-              <span class="text-container"
-                >{{ actor.name }} as {{ actor.asCharacter }}</span
-              >
+              <span class="text-container">
+                {{ actor.name }} as {{ actor.asCharacter }}
+              </span>
             </ng-template>
           </ng-container>
         </swiper>
       </div>
       <div class="swiper-pagination"></div>
     </div>
-  </div>
-</div>
+  </article>
+</section>

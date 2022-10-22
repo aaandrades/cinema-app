@@ -17,6 +17,7 @@ import * as movies from '../actions/movies.actions';
 import { userSelector } from '../selector/user.selector';
 import { AlertsMessagesType } from '../../enums/AlertMessageTypes';
 import { SnackbarProvider } from '../../components/snackbar/snackbar-provider/snackbar-provider.service';
+import { convertImgUrl } from 'src/app/services/helpers/helpers';
 
 @Injectable()
 export class MoviesEffects {
@@ -42,8 +43,11 @@ export class MoviesEffects {
             if (response.errorMessage !== '') {
               throw new Error(response.errorMessage);
             }
+            const mappedMovies = response.items.map((item: any) => {
+              return { ...item, image: convertImgUrl(item.image) };
+            });
             return movies.fetchMoviesSuccessAction({
-              results: response.items,
+              results: mappedMovies,
             });
           }),
           catchError((err) => {
@@ -70,8 +74,13 @@ export class MoviesEffects {
       switchMap(([action, userState]) =>
         this.movieService.getMovieById(userState.token_api, action.id).pipe(
           map((response: any) => {
+            const mappedActors = response.actorList.map((actor: any) => ({
+              ...actor,
+              image: convertImgUrl(actor.image),
+            }));
+            const mappedMovie = { ...response, actorList: mappedActors };
             return movies.fetchMovieByIdSuccessAction({
-              currentMovie: response,
+              currentMovie: mappedMovie,
             });
           }),
           catchError((err) => {
@@ -134,8 +143,11 @@ export class MoviesEffects {
             if (response.errorMessage !== '') {
               throw new Error(response.errorMessage);
             }
+            const mappedMovies = response.items.map((item: any) => {
+              return { ...item, image: convertImgUrl(item.image) };
+            });
             return movies.fetchPremiersActionSuccess({
-              premiers: response.items,
+              premiers: mappedMovies,
             });
           }),
           catchError((err) => {
@@ -165,8 +177,11 @@ export class MoviesEffects {
             if (response.errorMessage !== '') {
               throw new Error(response.errorMessage);
             }
+            const mappedMovies = response.items.map((item: any) => {
+              return { ...item, image: convertImgUrl(item.image) };
+            });
             return movies.fetchNewMoviesSuccessAction({
-              comingSoon: response.items,
+              comingSoon: mappedMovies,
             });
           }),
           catchError((err) => {

@@ -1,6 +1,9 @@
-<div class="container">
+<section class="container">
   <app-navbar [current]="'search'"></app-navbar>
-  <div [ngClass]="showingResults ? 'no-height' : ''" class="search-container">
+  <article
+    [ngClass]="showingResults ? 'no-height' : ''"
+    class="search-container"
+  >
     <div class="search-container__box animate__animated animate__fadeInDown">
       <h2>Movie search</h2>
       <p>Search by expression to find available movies in the IMDB service.</p>
@@ -52,5 +55,5 @@
         <h3 class="no-results">No movies found with your search</h3>
       </div>
     </ng-template>
-  </div>
-</div>
+  </article>
+</section>

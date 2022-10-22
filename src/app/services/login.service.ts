@@ -14,7 +14,7 @@ export class LoginService {
 
   loginService(credentials: credentials) {
     return of(userMock);
-    return this.http.post(this.REST_API + '/login', credentials);
+    // return this.http.post(this.REST_API + '/login', credentials);
   }
 
   registerService(register: registerCredentials) {

@@ -1,5 +1,5 @@
 <app-navbar [current]="'dashboard'"></app-navbar>
-<div
+<section
   class="container"
   infiniteScroll
   [infiniteScrollDistance]="1"
@@ -7,7 +7,7 @@
   (scrolled)="onScroll()"
 >
   <div class="navbar-space"></div>
-  <div class="container-movies">
+  <article class="container-movies">
     <div class="container__header">
       <h2>Look up for some movie</h2>
       <input
@@ -42,10 +42,10 @@
         </ng-container>
       </ng-container>
     </div>
-  </div>
+  </article>
   <ng-template #noResults>
     <div class="container__movies--no-results">
       No results for {{ currentSearch }}, please try with another search.
     </div>
   </ng-template>
-</div>
+</section>
