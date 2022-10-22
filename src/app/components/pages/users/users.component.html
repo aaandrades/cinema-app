@@ -1,50 +1,61 @@
-<app-navbar [current]="'user'"></app-navbar>
-<div class="container">
-  <span></span>
-  <div class="users-container animate__animated animate__fadeIn">
-    <h1>User information</h1>
+<section class="container">
+  <app-navbar [current]="'user'"></app-navbar>
+  <article class="users-container animate__animated animate__fadeIn">
     <div class="users-container__card">
+      <h3>User information</h3>
       <form [formGroup]="updateForm" novalidate>
-        <span>Name</span>
+        <label for="name">Name</label>
         <input
+          id="name"
           class="users-container__card__input"
           type="text"
           formControlName="name"
         />
-        <span>Email</span>
+        <label for="email">Email</label>
         <input
+          id="email"
           class="users-container__card__input"
           type="email"
           formControlName="email"
         />
-        <span>Password</span>
+        <label for="password">Password</label>
         <input
+          id="password"
           class="users-container__card__input"
           type="password"
           formControlName="password"
         />
         <ng-container *ngIf="password !== ''">
-          <span>Repeat new password</span>
+          <label for="password-2">Repeat new password</label>
           <input
+            id="password-2"
             class="users-container__card__input"
             type="password"
             formControlName="confirmationPassword"
           />
         </ng-container>
-        <span class="error-bold" *ngIf="publicUser"
-          >You logged in with public access, to edit all information please
-          create an account.</span
-        >
+        <p class="error-bold" *ngIf="publicUser">
+          You logged in with public access, to edit all information please
+          create an account.
+        </p>
         <div class="button-containers">
-          <button class="users-container__card__button" (click)="updateData()">
+          <button
+            type="button"
+            class="action__button action__button--primary"
+            (click)="updateData()"
+          >
             Update information
           </button>
+          <button
+            type="button"
+            class="action__button action__button--secondary"
+            (click)="logout()"
+          >
+            Logout
+          </button>
         </div>
-        <div class="logout-button">
-          <a class="logout-button" href='login'>Logout</a>
-        </div>
-        <!-- <p>Sorry, here you can't find more customization :(</p> -->
+        <!-- Sorry, here you can't find more customization :( -->
       </form>
     </div>
-  </div>
-</div>
+  </article>
+</section>

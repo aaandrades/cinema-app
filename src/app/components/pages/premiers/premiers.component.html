@@ -1,15 +1,18 @@
-<app-navbar [current]="'premiers'"></app-navbar>
-<div class="container">
-  <span></span>
-  <div class="premiers-container">
+<section class="container">
+  <app-navbar [current]="'premiers'"></app-navbar>
+  <article class="premiers-container">
     <div
       class="premiers-container__card animate__animated animate__slideInLeft"
     >
       <h2>Premiers</h2>
       <div class="premiers-container__card__movies">
         <ng-container *ngFor="let movie of premiers$ | async">
-          <div class="premiers-container__card__movie" (click)="goToDetails(movie.id)">
+          <div
+            class="premiers-container__card__movie"
+            (click)="goToDetails(movie.id)"
+          >
             <img
+              alt="{{ movie.title }}"
               src="{{ movie.image }}"
               class="premiers-container__card__image"
             />
@@ -20,17 +23,17 @@
       </div>
     </div>
     <div
-      class="
-        premiers-container__card
-        bottom-card
-        animate__animated animate__slideInRight
-      "
+      class="premiers-container__card bottom-card animate__animated animate__slideInRight"
     >
       <h2>Coming soon</h2>
       <div class="premiers-container__card__movies">
         <ng-container *ngFor="let movie of comingSoon$ | async">
-          <div class="premiers-container__card__movie" (click)="goToDetails(movie.id)">
+          <div
+            class="premiers-container__card__movie"
+            (click)="goToDetails(movie.id)"
+          >
             <img
+              alt="{{ movie.title }}"
               src="{{ movie.image }}"
               class="premiers-container__card__image"
             />
@@ -40,5 +43,5 @@
         </ng-container>
       </div>
     </div>
-  </div>
-</div>
+  </article>
+</section>

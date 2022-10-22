@@ -7,6 +7,7 @@ import {
   concatMap,
   map,
   switchMap,
+  take,
   tap,
   withLatestFrom,
 } from 'rxjs/operators';
@@ -89,13 +90,7 @@ export class UserEffects {
   logoutEffect$: Observable<Action> = createEffect(() =>
     this.actions$.pipe(
       ofType(actions.logoutAction),
-      switchMap(() => of(actions.logoutSuccessAction()))
-    )
-  );
-
-  logoutSuccessEffect$: Observable<Action> = createEffect(() =>
-    this.actions$.pipe(
-      ofType(actions.logoutSuccessAction),
+      switchMap(() => of(actions.logoutSuccessAction())),
       tap(() => this.router.navigate(['/login']))
     )
   );

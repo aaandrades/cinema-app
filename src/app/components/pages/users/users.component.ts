@@ -44,7 +44,7 @@ export class UsersComponent implements OnInit {
       this.updateForm.controls['password'].disable();
     }
     this.updateForm.get('password')?.valueChanges.subscribe((current) => {
-      this.password = current
+      this.password = current;
     });
   }
 

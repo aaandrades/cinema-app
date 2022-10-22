@@ -5,8 +5,17 @@ import {
   MassiveResultsInterface,
 } from '../store/model/movies.state';
 import { Observable, of } from 'rxjs';
-import { searchMock, premiersMock, comingSoonMock, moviesMock, moviesResponse } from '../mocks/movies.mock';
-import { PremiersInterface } from '../store/model/movies.state';
+import {
+  searchMock,
+  premiersMock,
+  comingSoonMock,
+  moviesResponse,
+  movieMock,
+} from '../mocks/movies.mock';
+import {
+  PremiersInterface,
+  MovieIdInterface,
+} from '../store/model/movies.state';
 
 @Injectable({
   providedIn: 'root',
@@ -18,33 +27,36 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMovies(tokenApi: string): Observable<ResultsInterface> {
-    // return of(moviesResponse);
-    return this.http.get<ResultsInterface>(
-      this.BASE_URL + 'Top250Movies/' + tokenApi
-    );
+    return of(moviesResponse);
+    // return this.http.get<ResultsInterface>(
+    //   this.BASE_URL + 'Top250Movies/' + tokenApi
+    // );
   }
 
-  getMovieById(tokenApi: string, id: string): Observable<ResultsInterface> {
-    return this.http.get<any>(
-      `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}`
-    );
+  getMovieById(tokenApi: string, id: string): Observable<MovieIdInterface> {
+    return of(movieMock);
+    // return this.http.get<any>(
+    //   `${this.INTERNATIONAL_BASE_URL}/en/API/Title/${tokenApi}/${id}`
+    // );
   }
 
   getMovieByExpression(
     tokenApi: string,
     expression: string
   ): Observable<MassiveResultsInterface> {
-    // return of(searchMock);
-    return this.http.get<any>(`${this.BASE_URL}Search/${tokenApi}/${expression}`)
+    return of(searchMock);
+    // return this.http.get<any>(
+    //   `${this.BASE_URL}Search/${tokenApi}/${expression}`
+    // );
   }
 
   getPremiersMovies(tokenApi: string): Observable<PremiersInterface> {
-    // return of(premiersMock);
-    return this.http.get<any>(`${this.BASE_URL}InTheaters/${tokenApi}`)
+    return of(premiersMock);
+    // return this.http.get<any>(`${this.BASE_URL}InTheaters/${tokenApi}`);
   }
 
   getNewMovies(tokenApi: string): Observable<PremiersInterface> {
-    // return of(comingSoonMock);
-    return this.http.get<any>(`${this.BASE_URL}ComingSoon/${tokenApi}`)
+    return of(comingSoonMock);
+    // return this.http.get<any>(`${this.BASE_URL}ComingSoon/${tokenApi}`);
   }
 }

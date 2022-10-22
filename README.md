@@ -1,12 +1,13 @@
 ## :rocket: Movie-App
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9f291d0b-7894-410e-858f-b487e6dfd1b2/deploy-status)](https://app.netlify.com/sites/cinema-application/deploys)
 ![aaandrades](https://img.shields.io/badge/-Frontend-orange)
 ![Build](https://img.shields.io/badge/-Working-brightgreen)
 
 ### :memo: Description
 
 > Movie-app it's an application where you can find all the information about
-movies throught the IMDB service. You can register or login and save your preferences. The backend its created in Nodejs (Express with Typescript)
+> movies throught the IMDB service. You can register or login and save your preferences. The backend its created in Nodejs (Express with Typescript)
 
 <img src="documentation/detail.png"  alt="Detail screen" width="600" height="400" style=border-radius:6px>
 

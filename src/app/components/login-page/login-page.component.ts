@@ -34,6 +34,7 @@ export class LoginPageComponent {
   setLoginState(): void {
     this.validUser = true;
     this.validPassword = true;
+    this.showLoader();
     this.userFacade.initLogin(this.buildRequest);
   }
 
@@ -53,6 +54,7 @@ export class LoginPageComponent {
     this.validUser = true;
     this.validPassword = true;
     this.userFacade.setPublicUser();
+    this.showLoader();
     this.userFacade.initLogin({
       email: Constants.defaultUser,
       password: Constants.defaultPassword,
@@ -60,7 +62,9 @@ export class LoginPageComponent {
   }
 
   showLoader() {
-    this.modalService.showLoader();
+    this.modalService.showLoader(
+      'If its the first login, this could take up to 30s because the backend is running on a free tier server'
+    );
   }
 
   get buildRequest(): credentialsInterface {

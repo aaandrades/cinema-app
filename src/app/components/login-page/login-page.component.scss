@@ -16,7 +16,7 @@
       rgba(117, 19, 93, 0.8)
     ),
     url("../../../assets/wallpaper-movies.jpg");
-  background-size: 100rem;
+  background-size: cover;
 
   @media only screen and (max-width: 650px) {
     align-items: flex-start;
@@ -128,13 +128,13 @@
         border: none;
         width: 100%;
         height: 45px;
+        font-size: 1rem;
         cursor: pointer;
         color: $white-100;
         border-radius: 10px;
         background-color: $primary-color;
         transition: font-size 100ms ease-out, background-color 200ms ease-out;
         &:hover {
-          font-size: 14px;
           background-color: $primary-color-hover;
           transition: all 200ms ease-in;
         }

@@ -4,42 +4,48 @@
 .container {
   position: fixed;
   top: 0;
+  bottom: 0;
   right: 0;
   left: 0;
-  bottom: 0;
-  display: grid;
   overflow-y: auto;
-  color: $tertiary-color;
-  background-color: $gray-300;
-  grid-template-columns: 5% 95%;
-  @media only screen and (max-width: 600px) {
-    grid-template-columns: 0% 100%;
+
+  animation-duration: 500ms;
+
+  @media only screen and (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 5rem auto;
   }
+
   .premiers-container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     @media only screen and (max-width: 600px) {
-      margin-top: 40px;
       justify-content: flex-start;
     }
     &__card {
       width: 80%;
+      max-width: 1000px;
       padding: 20px 40px;
       margin: 30px 0px;
-      border-radius: 30px;
-      background-color: $secondary-color;
-      box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.27);
-      -webkit-box-shadow: 0px 0px 8px -2px rgba(0, 0, 0, 0.27);
+      border-radius: 15px;
+      background-color: #75135d7d;
+      color: $white-100;
       @media only screen and (max-width: 600px) {
-        width: 70%;
+        width: 90%;
+        box-sizing: border-box;
+        padding: 0px 20px 20px;
       }
       &__movies {
         display: grid;
         grid-template-columns: 25% 25% 25% 25%;
         @media only screen and (max-width: 600px) {
           grid-template-columns: 50% 50%;
+        }
+        @media only screen and (max-width: 350px) {
+          grid-template-columns: 100%;
+          gap: 20px;
         }
       }
       &__movie {
@@ -64,13 +70,13 @@
         }
       }
       &__image {
-        width: 60%;
+        width: 80%;
         border-radius: 8px;
         box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
         -webkit-box-shadow: 0px 5px 13px 2px rgb(0 0 0 / 30%);
 
         @media only screen and (max-width: 600px) {
-          width: 80%;
+          width: 100%;
         }
       }
     }

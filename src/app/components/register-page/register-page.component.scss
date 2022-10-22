@@ -14,7 +14,7 @@
       rgba(117, 19, 93, 0.5)
     ),
     url("../../../assets/wallpaper-movies-register.jpg");
-  background-size: 100rem;
+  background-size: cover;
 
   @media only screen and (max-width: 650px) {
     align-items: flex-start;
@@ -96,6 +96,10 @@
     padding: 10px;
     transition: all 200ms ease-out;
     cursor: pointer;
+
+    @media only screen and (max-width: 650px) {
+      width: 100%;
+    }
     &:hover {
       background-color: $primary-color-hover;
       transition: all 200ms ease-in;

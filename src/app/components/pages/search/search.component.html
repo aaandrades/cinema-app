@@ -1,18 +1,10 @@
-<app-navbar [current]="'search'"></app-navbar>
-<div class="container">
-  <span></span>
-  <div
+<section class="container">
+  <app-navbar [current]="'search'"></app-navbar>
+  <article
+    [ngClass]="showingResults ? 'no-height' : ''"
     class="search-container"
-    [ngClass]="showingResults ? 'showing-results' : ''"
   >
-    <div
-      class="search-container__box"
-      [ngClass]="
-        showingResults
-          ? ''
-          : 'initial-search animate__animated animate__fadeInDown'
-      "
-    >
+    <div class="search-container__box animate__animated animate__fadeInDown">
       <h2>Movie search</h2>
       <p>Search by expression to find available movies in the IMDB service.</p>
       <div class="search-container__input">
@@ -22,8 +14,16 @@
           [(ngModel)]="currentSearch"
           (keyup.enter)="searchMovies()"
         />
-        <button (click)="searchMovies()" class="button-search">Search</button>
         <button
+          type="button"
+          (click)="searchMovies()"
+          class="button-search"
+          [disabled]="currentSearch === ''"
+        >
+          Search
+        </button>
+        <button
+          type="button"
           (click)="clearFilters()"
           class="button-search clear"
           *ngIf="currentSearch !== ''"
@@ -32,19 +32,28 @@
         </button>
       </div>
     </div>
-    <div class="results-container" *ngIf="showingResults">
-      <div
-        *ngFor="let item of moviesResults$ | async"
-        class="results-container__card"
-        (click)="goToDetails(item.id)"
-      >
-        <img
-          src="{{ item.image }}"
-          alt="{{ item.title }}"
-          class="results-container__card__image"
-        />
-        <span class="results-container__card__label">{{ item.title }}</span>
+    <ng-container
+      *ngIf="((moviesResults$ | async) || []).length > 0; else noresults"
+    >
+      <div class="results-container" *ngIf="showingResults">
+        <div
+          *ngFor="let item of moviesResults$ | async"
+          class="results-container__card"
+          (click)="goToDetails(item.id)"
+        >
+          <img
+            src="{{ item.image }}"
+            alt="{{ item.title }}"
+            class="results-container__card__image"
+          />
+          <span class="results-container__card__label">{{ item.title }}</span>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
+    </ng-container>
+    <ng-template #noresults>
+      <div *ngIf="startFetching" class="results-container">
+        <h3 class="no-results">No movies found with your search</h3>
+      </div>
+    </ng-template>
+  </article>
+</section>
