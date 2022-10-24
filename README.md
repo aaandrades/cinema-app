@@ -44,7 +44,6 @@
 ### :hammer: Demostration
 
 - Link: https://cinema-application.netlify.app/login
-- Video: https://youtu.be/4HcVUCw4Q-w (outdated)
 
 <img src="documentation/login.png"  alt="Detail screen" width="600" height="400" style=border-radius:6px>
 
