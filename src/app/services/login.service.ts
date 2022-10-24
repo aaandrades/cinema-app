@@ -13,8 +13,8 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   loginService(credentials: credentials) {
-    return of(userMock);
-    // return this.http.post(this.REST_API + '/login', credentials);
+    // return of(userMock);
+    return this.http.post(this.REST_API + '/login', credentials);
   }
 
   registerService(register: registerCredentials) {

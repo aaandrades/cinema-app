@@ -4,56 +4,52 @@
       src="../../../assets/back-button-inside.svg"
       alt="Back"
       (click)="goBack()"
-      class="back-row"
+      class="return-action"
       height="27px"
       title="Return"
     />
   </article>
   <article class="movie-container__body">
     <img
-      class="movie-container__body__image"
+      class="movie-container__body--image"
       alt="{{ currentMovie.title }}"
       src="{{ currentMovie.image }}"
     />
     <div class="movie-container__body__description">
-      <h1 class="movie-container__body__title">{{ currentMovie.title }}</h1>
-      <p class="movie-container__body__summary">
-        {{ viewMore ? currentMovie.plot : formatResume(currentMovie.plot) }}
+      <h1>{{ currentMovie.title }}</h1>
+      <p
+        class="movie-container__body__description--summary"
+        title="{{ currentMovie.plot }}"
+      >
+        {{ currentMovie.plot }}
       </p>
-      <div [ngStyle]="{ width: '100%' }">
-        <button type="button" class="button-container" (click)="changeView()">
-          {{ viewMore ? "View less" : "View more" }}
-        </button>
-      </div>
-      <div class="movie-container__body__about">
-        <div class="about-texts">
+      <div class="movie-container__body__description--about">
+        <div class="about-text">
           <span class="about-texts__labels">
             Year:
-            <span [ngStyle]="{ 'font-weight': '400' }"
-              >{{ currentMovie.year }}
+            <span class="about-text__content">
+              {{ currentMovie.year }}
             </span>
           </span>
           <span class="about-texts__labels">
             Directors:
-            <span [ngStyle]="{ 'font-weight': '400' }">
+            <span class="about-text__content">
               {{ currentMovie.directors }}
             </span>
           </span>
           <span class="about-texts__labels">
             Generes:
-            <span [ngStyle]="{ 'font-weight': '400' }"
-              >{{ currentMovie.genres }}
-            </span>
+            <span class="about-text__content">{{ currentMovie.genres }} </span>
           </span>
           <span class="about-texts__labels">
             Imdb Rate:
-            <span [ngStyle]="{ 'font-weight': '400' }"
-              >{{ currentMovie.imDbRating }}
+            <span class="about-text__content">
+              {{ currentMovie.imDbRating }}
             </span>
           </span>
         </div>
       </div>
-      <div class="movie-container__body__awards">
+      <div class="movie-container__body__description--awards">
         <h3 class="title-helper">Awards</h3>
         <span class="award-text">{{ currentMovie.awards }}</span>
       </div>
@@ -70,7 +66,7 @@
                 alt="{{ actor.name }}"
                 src="{{ actor.image }}"
               />
-              <span class="text-container">
+              <span class="character-description">
                 {{ actor.name }} as {{ actor.asCharacter }}
               </span>
             </ng-template>
