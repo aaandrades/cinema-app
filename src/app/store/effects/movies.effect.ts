@@ -44,7 +44,7 @@ export class MoviesEffects {
               throw new Error(response.errorMessage);
             }
             const mappedMovies = response.items.map((item: any) => {
-              return { ...item, image: convertImgUrl(item.image) };
+              return { ...item, image: convertImgUrl(item.image, 300) };
             });
             return movies.fetchMoviesSuccessAction({
               results: mappedMovies,
@@ -76,9 +76,13 @@ export class MoviesEffects {
           map((response: any) => {
             const mappedActors = response.actorList.map((actor: any) => ({
               ...actor,
-              image: convertImgUrl(actor.image),
+              image: convertImgUrl(actor.image, 600),
             }));
-            const mappedMovie = { ...response, actorList: mappedActors };
+            const mappedMovie = {
+              ...response,
+              image: convertImgUrl(response.image, 600),
+              actorList: mappedActors,
+            };
             return movies.fetchMovieByIdSuccessAction({
               currentMovie: mappedMovie,
             });
@@ -112,8 +116,16 @@ export class MoviesEffects {
               if (response.errorMessage !== '') {
                 throw new Error(response.errorMessage);
               }
+              const mappedMovies = response.results.map((movie: any) => ({
+                ...movie,
+                image: convertImgUrl(movie.image, 300),
+              }));
+              const mappedResponse = {
+                ...response,
+                results: mappedMovies,
+              };
               return movies.fetchMovieByExpressionSuccessAction({
-                searchResults: response,
+                searchResults: mappedResponse,
               });
             }),
             catchError((err) => {

@@ -18,7 +18,6 @@ SwiperCore.use([Pagination]);
 export class DetailsComponent implements OnInit {
   currentMovie: any = {};
   showLoader = true;
-  viewMore = false;
 
   constructor(
     private moviesFacade: MoviesFacade,
@@ -43,14 +42,6 @@ export class DetailsComponent implements OnInit {
       this.loader.hideLoader();
       this.router.navigate(['/dashboard']);
     }
-  }
-
-  changeView() {
-    this.viewMore = !this.viewMore;
-  }
-
-  formatResume(plot: string) {
-    return plot?.substring(0, 220) + '...';
   }
 
   goBack() {

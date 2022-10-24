@@ -23,7 +23,6 @@ export class DashboardComponent implements OnInit {
       .toPromise();
     this.movies = moviesInfo;
     this.currentMovies = this.getIntervalMovies(this.movies, -1, 20);
-    // this.currentMovies = this.getIntervalMovies(moviesMock, -1, 20);
   }
 
   filterMovies() {
